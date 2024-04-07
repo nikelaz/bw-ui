@@ -21,31 +21,37 @@ export enum IconTypes {
 }
 
 export type IconProps = Readonly<{
-  width: number,
-  height: number,
-  fill: string,
-  type?: IconTypes
+  width?: number,
+  height?: number,
+  fill?: string,
+  type?: IconTypes,
+  className?:string,
 }>;
 
 export const Icon = (props: IconProps) => {
+  const iconProps = {
+    ...props,
+    className: props.className ? `icon ${props.className}` : 'icon',
+  };
+
   switch (props.type) {
     case IconTypes.Plus:
-      return <PlusIcon {...props} />
+      return <PlusIcon {...iconProps} />
     case IconTypes.Calendar:
-      return <CalendarIcon {...props} />
+      return <CalendarIcon {...iconProps} />
     case IconTypes.Chart:
-      return <ChartIcon {...props} />
+      return <ChartIcon {...iconProps} />
     case IconTypes.ChevronDown:
-      return <ChevronDownIcon {...props} />
+      return <ChevronDownIcon {...iconProps} />
     case IconTypes.Gear:
-      return <GearIcon {...props} />
+      return <GearIcon {...iconProps} />
     case IconTypes.Search:
-      return <SearchIcon {...props} />
+      return <SearchIcon {...iconProps} />
     case IconTypes.User:
-      return <UserIcon {...props} />
+      return <UserIcon {...iconProps} />
     case IconTypes.Wallet:
-      return <WalletIcon {...props} />
+      return <WalletIcon {...iconProps} />
     case IconTypes.XMark:
-      return <XmarkIcon {...props} />
+      return <XmarkIcon {...iconProps} />
   }
 };
