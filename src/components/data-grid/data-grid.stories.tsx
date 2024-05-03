@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DataGrid } from './data-grid';
+import { Row, Cell } from '../table/table';
+import { Button } from '../button/button';
+import { IconTypes } from '../icon/icon';
+import { Pagination } from '../pagination/pagination';
 
 const demoData = [
   {
@@ -38,10 +42,23 @@ export const Default: Story = {
   args: {
     data: demoData,
     cols: [
-      { field: 'title', label: 'Title' },
+      { field: 'title', label: 'Transactions' },
       { field: 'date', label: 'Date' },
       { field: 'category', label: 'Category' },
-      { field: 'amount', label: 'Amount' }
-    ]
+      { field: 'amount', label: 'Amount', formattingFunction: (val: number) => `$${val}` }
+    ],
+    children: (
+      <Row>
+        <Cell>
+          <Button type='link' icon={IconTypes.Plus}>New Transaction</Button>
+        </Cell>
+        <Cell textAlign='right' colSpan={3}>
+          <Pagination>
+            <Button type='link' icon={IconTypes.ChevronLeft}>Previous</Button>
+            <Button type='link' icon={IconTypes.ChevronRight} iconPosition='right'>Next</Button>
+          </Pagination>
+        </Cell>
+      </Row>
+    )
   }
 };
