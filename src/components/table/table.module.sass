@@ -1,0 +1,62 @@
+.table
+  border-spacing: 0
+  padding: 0 0.928rem 0.928rem
+  background-color: var(--bw-ui-table-bgColor, #F9F9F9)
+  border-radius: 0.714rem
+  font-size: 1.142rem
+
+.table__row
+  position: relative
+  box-sizing: border-box
+
+  &:last-of-type
+    .table__cell
+      padding-bottom: 0
+      border-color: transparent
+
+.table__headerCell
+  text-align: left
+  font-size: 1.142rem
+  font-weight: 600
+  padding: 0.928rem
+  vertical-align: bottom
+  color: var(--bw-ui-table-headerCell-color, #555)
+
+  &--l
+    font-size: 1.312rem
+
+  &--dark
+    color: var(--bw-ui-table-headerCell-color, #000)
+
+.table__cell
+  padding: 0.928rem
+  border-bottom: 2px solid var(--bw-ui-table-borderColor, #ddd)
+  vertical-align: bottom
+
+  &--l
+    font-size: 1.214rem
+  
+  &--bold
+    font-weight: 600
+
+.table__cell,
+.table__headerCell
+  &--right
+    text-align: right
+  
+  button
+    font-size: 1.142rem
+
+.table__progress
+  position: absolute
+  bottom: 0
+  left: 0
+  appearance: none
+  width: 100%
+  height: 2px
+
+  &::-webkit-progress-bar
+    background-color: var(--bw-ui-table-borderColor, #ddd)
+  
+  &::-webkit-progress-value
+    background-color: var(--bw-ui-table-progress-foregroundColor, #34C759)
