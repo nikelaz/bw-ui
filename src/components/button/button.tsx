@@ -1,5 +1,6 @@
 import styles from './button.module.sass';
 import { Icon, IconTypes } from '../icon/icon';
+import { clsx } from 'clsx';
 
 type ButtonProps = Readonly<{
   children: React.ReactNode,
@@ -8,10 +9,18 @@ type ButtonProps = Readonly<{
   icon?: IconTypes,
   iconWidth?: number,
   iconHeight?: number,
+  type?: 'link',
 }>;
 
 export const Button = (props: ButtonProps) => (
-  <button onClick={props.onClick} className={`${styles['button']} ${props.className || ''}`}>
+  <button
+    onClick={props.onClick}
+    className={clsx(
+      styles['button'],
+      props.className,
+      props.type && styles[`button--${props.type}`]
+    )}
+  >
     { props.icon ? (
       <span className={styles['button__icon']}>
         <Icon type={props.icon} width={props.iconWidth || 14} height={props.iconHeight || 14} fill="currentColor" />

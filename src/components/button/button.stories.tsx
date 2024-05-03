@@ -14,7 +14,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {
+export const Default: Story = {
   args: {
     children: 'Button'
   }
@@ -26,3 +26,19 @@ export const IconButton: Story = {
     icon: IconTypes.Plus
   },
 };
+
+export const Link: Story = {
+  args: {
+    children: 'Link Button',
+    type: 'link'
+  }
+};
+
+export const IconLink: Story = {
+  args: {
+    children: 'Link Button',
+    type: 'link',
+    icon: IconTypes.Plus
+  }
+};
+
