@@ -59,6 +59,7 @@ export const Default: Story = {
           </Pagination>
         </Cell>
       </Row>
-    )
+    ),
+    limit: 2,
   }
 };
