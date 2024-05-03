@@ -1,5 +1,5 @@
 .button
-  display: flex
+  display: inline-flex
   align-items: stretch
   appearance: none
   border: none
@@ -28,6 +28,7 @@
     background-color: transparent
     color: var(--bw-ui-button-bgColor, #007BFF)
     border-radius: 0
+    gap: 5px
   
     .button__content,
     .button__icon
@@ -35,11 +36,9 @@
       padding: 0
     
     .button__icon
-      padding-right: 5px
-      
       svg
         width: 0.75em
-        height: 0.75em
+        height: 0.75em     
 
     &:hover,
     &:focus
@@ -67,3 +66,7 @@
     display: block
     width: 1rem
     height: 1rem
+
+.button--iconRight
+  .button__icon
+    order: 1

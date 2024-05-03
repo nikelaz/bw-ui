@@ -9,6 +9,7 @@ type ButtonProps = Readonly<{
   icon?: IconTypes,
   iconWidth?: number,
   iconHeight?: number,
+  iconPosition?: 'right',
   type?: 'link',
 }>;
 
@@ -18,7 +19,8 @@ export const Button = (props: ButtonProps) => (
     className={clsx(
       styles['button'],
       props.className,
-      props.type && styles[`button--${props.type}`]
+      props.type && styles[`button--${props.type}`],
+      props.iconPosition && styles[`button--iconRight`]
     )}
   >
     { props.icon ? (
