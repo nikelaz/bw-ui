@@ -45,6 +45,18 @@ export const ChevronDown: Story = {
   },
 };
 
+export const ChevronLeft: Story = {
+  args: {
+    type: IconTypes.ChevronLeft,
+  },
+};
+
+export const ChevronRight: Story = {
+  args: {
+    type: IconTypes.ChevronRight,
+  },
+};
+
 export const Gear: Story = {
   args: {
     type: IconTypes.Gear,
