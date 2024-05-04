@@ -9,9 +9,7 @@ type Col = {
 type DataGridProps = Readonly<{
   cols: Array<Col>,
   data: Array<any>,
-  children?: React.ReactNode,
-  limit?: Number,
-  offset?: Number
+  children?: React.ReactNode
 }>;
 
 export const DataGrid = (props: DataGridProps) => {
