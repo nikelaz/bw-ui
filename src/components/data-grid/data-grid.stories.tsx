@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DataGrid } from './data-grid';
-import { Row, Cell } from '../table/table';
+import { Row, Cell, HeaderCell } from '../table/table';
 import { Button } from '../button/button';
 import { IconTypes } from '../icon/icon';
 import { Pagination } from '../pagination/pagination';
@@ -42,10 +42,36 @@ export const Default: Story = {
   args: {
     data: demoData,
     cols: [
-      { field: 'title', label: 'Transactions' },
-      { field: 'date', label: 'Date' },
-      { field: 'category', label: 'Category' },
-      { field: 'amount', label: 'Amount', formattingFunction: (val: number) => `$${val}` }
+      {
+        field: 'title',
+        label: 'Transactions',
+        headerCellRenderer() {
+          return (
+            <HeaderCell
+              fontSize='l'
+              textColor='dark'
+            >
+              {this.label || this.field}
+            </HeaderCell>
+          );
+        }
+      },
+      {
+        field: 'date',
+        label: 'Date',
+        textAlign: 'right'
+      },
+      {
+        field: 'category',
+        label: 'Category',
+        textAlign: 'right'
+      },
+      {
+        field: 'amount',
+        label: 'Amount',
+        formattingFunction: (val: number) => `$${val}`,
+        textAlign: 'right'
+      }
     ],
     children: (
       <tfoot>
@@ -61,7 +87,6 @@ export const Default: Story = {
           </Cell>
         </Row>
       </tfoot>
-    ),
-    limit: 2,
+    )
   }
 };
