@@ -11,7 +11,8 @@ type Col = {
 type DataGridProps = Readonly<{
   cols: Array<Col>,
   data: Array<any>,
-  children?: React.ReactNode
+  children?: React.ReactNode,
+  editable?: boolean
 }>;
 
 export const DataGrid = (props: DataGridProps) => {
@@ -32,7 +33,7 @@ export const DataGrid = (props: DataGridProps) => {
         {props.data.map(row => (
           <Row>
             {props.cols.map((col) => (
-              <Cell textAlign={col.textAlign}>
+              <Cell textAlign={col.textAlign} editable={props.editable} onInput={(event) => console.log('input', event)}>
                 {col.formattingFunction ? col.formattingFunction(row[col.field]) : row[col.field]}
               </Cell>
             ))}

@@ -73,6 +73,7 @@ export const Default: Story = {
         textAlign: 'right'
       }
     ],
+    editable: true,
     children: (
       <tfoot>
         <Row>

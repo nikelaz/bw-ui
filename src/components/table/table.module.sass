@@ -29,9 +29,19 @@
     color: var(--bw-ui-table-headerCell-color, #000)
 
 .table__cell
+  position: relative
   padding: 0.928rem
   border-bottom: 2px solid var(--bw-ui-table-borderColor, #ddd)
   vertical-align: bottom
+
+  &:focus
+    outline: none
+    &:before
+      content: ''
+      position: absolute
+      inset: 5px
+      outline: 2px solid var(--bw-ui-table-cellFocusColor, #007BFF)
+      border-radius: 5px
 
   &--l
     font-size: 1.214rem

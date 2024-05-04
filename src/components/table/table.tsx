@@ -39,10 +39,12 @@ type CellProps = Readonly<{
   textAlign?: 'right',
   fontSize?: 'l',
   fontWeight?: 'bold',
-  colSpan?: number
+  colSpan?: number,
+  editable?: boolean,
+  onChange?: React.EventHandler<any>
 }>;
 
-export const Cell = (props: CellProps) => (
+export const Cell = (props: CellProps) => {
   <td
     className={clsx(
       styles['table__cell'],
@@ -51,10 +53,12 @@ export const Cell = (props: CellProps) => (
       props.fontWeight && styles[`table__cell--${props.fontWeight}`]
     )}
     colSpan={props.colSpan}
+    contentEditable={props.editable}
+    onInput={props.onInput}
   >
     {props.children}
   </td>
-);
+};
 
 type RowProps = Readonly<{
   children: React.ReactNode,
