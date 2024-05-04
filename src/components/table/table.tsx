@@ -41,10 +41,10 @@ type CellProps = Readonly<{
   fontWeight?: 'bold',
   colSpan?: number,
   editable?: boolean,
-  onChange?: React.EventHandler<any>
+  onInput?: React.EventHandler<any>
 }>;
 
-export const Cell = (props: CellProps) => {
+export const Cell = (props: CellProps) => (
   <td
     className={clsx(
       styles['table__cell'],
@@ -58,7 +58,7 @@ export const Cell = (props: CellProps) => {
   >
     {props.children}
   </td>
-};
+);
 
 type RowProps = Readonly<{
   children: React.ReactNode,
