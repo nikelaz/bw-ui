@@ -56,6 +56,8 @@ export const Default: Story = {
             <Cell textAlign='right'>$150.00</Cell>
             <Cell textAlign='right'>$150.00</Cell>
           </Row>
+        </tbody>
+        <tfoot>
           <Row>
             <Cell>
               <Button type='link' icon={IconTypes.Plus}>New Loan</Button>
@@ -64,7 +66,7 @@ export const Default: Story = {
             <Cell textAlign='right'>$1470.00</Cell>
             <Cell textAlign='right'>$1000.00</Cell>
           </Row>
-        </tbody>
+        </tfoot>
       </>
     )
   }
@@ -107,6 +109,8 @@ export const WithPagination: Story = {
             <Cell textAlign='right'>Utilities</Cell>
             <Cell textAlign='right'>$56.40</Cell>
           </Row>
+        </tbody>
+        <tfoot>
           <Row>
             <Cell>
               <Button type='link' icon={IconTypes.Plus}>New Transaction</Button>
@@ -118,7 +122,7 @@ export const WithPagination: Story = {
               </Pagination>
             </Cell>
           </Row>
-        </tbody>
+        </tfoot>
       </>
     )
   }

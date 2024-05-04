@@ -48,17 +48,19 @@ export const Default: Story = {
       { field: 'amount', label: 'Amount', formattingFunction: (val: number) => `$${val}` }
     ],
     children: (
-      <Row>
-        <Cell>
-          <Button type='link' icon={IconTypes.Plus}>New Transaction</Button>
-        </Cell>
-        <Cell textAlign='right' colSpan={3}>
-          <Pagination>
-            <Button type='link' icon={IconTypes.ChevronLeft}>Previous</Button>
-            <Button type='link' icon={IconTypes.ChevronRight} iconPosition='right'>Next</Button>
-          </Pagination>
-        </Cell>
-      </Row>
+      <tfoot>
+        <Row>
+          <Cell>
+            <Button type='link' icon={IconTypes.Plus}>New Transaction</Button>
+          </Cell>
+          <Cell textAlign='right' colSpan={3}>
+            <Pagination>
+              <Button type='link' icon={IconTypes.ChevronLeft}>Previous</Button>
+              <Button type='link' icon={IconTypes.ChevronRight} iconPosition='right'>Next</Button>
+            </Pagination>
+          </Cell>
+        </Row>
+      </tfoot>
     ),
     limit: 2,
   }

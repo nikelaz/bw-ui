@@ -31,27 +31,17 @@ export const DataGrid = (props: DataGridProps) => {
         </Row>
       </thead>
       <tbody>
-        {
-          Array.from(Array(props.limit || props.data.length).keys()).map(index => {
-            const row = props.data[index];
-            
-            return (
-              <>
-                {props.data[index] ? (
-                  <Row>
-                    {props.cols.map((col, index) => (
-                      <Cell textAlign={index !== 0 ? 'right' : undefined}>
-                        {col.formattingFunction ? col.formattingFunction(row[col.field]) : row[col.field]}
-                      </Cell>
-                    ))}
-                  </Row>
-                ) : ''}
-              </>
-            );
-          })
-        }
-        {props.children}
+        {props.data.map(row => (
+          <Row>
+            {props.cols.map((col, index) => (
+              <Cell textAlign={index !== 0 ? 'right' : undefined}>
+                {col.formattingFunction ? col.formattingFunction(row[col.field]) : row[col.field]}
+              </Cell>
+            ))}
+          </Row>
+        ))}
       </tbody>
+      {props.children}
     </Table>
   );
 }
