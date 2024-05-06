@@ -1,18 +1,19 @@
 import { Table, Row, Cell, HeaderCell } from '../table/table';
+import { useState } from 'react';
 
 type Col = {
   field: string,
   label?: string,
   textAlign?: 'right',
   formattingFunction?: Function,
-  headerCellRenderer?: Function
+  headerCellRenderer?: Function,
+  editable?: boolean
 }
 
 type DataGridProps = Readonly<{
   cols: Array<Col>,
   data: Array<any>,
-  children?: React.ReactNode,
-  editable?: boolean
+  children?: React.ReactNode
 }>;
 
 export const DataGrid = (props: DataGridProps) => {
@@ -33,9 +34,7 @@ export const DataGrid = (props: DataGridProps) => {
         {props.data.map(row => (
           <Row>
             {props.cols.map((col) => (
-              <Cell textAlign={col.textAlign} editable={props.editable} onInput={(event) => console.log('input', event)}>
-                {col.formattingFunction ? col.formattingFunction(row[col.field]) : row[col.field]}
-              </Cell>
+              <DataGridCell row={row} col={col} />
             ))}
           </Row>
         ))}
@@ -44,3 +43,38 @@ export const DataGrid = (props: DataGridProps) => {
     </Table>
   );
 }
+
+type DataGridRowProps = Readonly<{
+  row: any,
+  cols: Array<Col>
+}>;
+
+const DataGridRow = (props: DataGridRowProps) => {
+  return props.cols.map((col) => (
+    <DataGridCell row={props.row} col={col} />
+  ))
+};
+
+type DataGridCellProps = Readonly<{
+  col: Col,
+  row: any,
+}>;
+
+const DataGridCell = (props: DataGridCellProps) => {
+  const [cachedValue, setCachedValue] = useState(props.row[props.col.field]);
+
+  const blurHandler = (event: React.ChangeEvent<HTMLElement>) => {
+    const value = event.target.innerText;
+    if (cachedValue === value) return;
+  }
+
+  return (
+    <Cell
+      textAlign={props.col.textAlign}
+      editable={props.col.editable}
+      onBlur={props.col.editable ? blurHandler : undefined}
+    >
+      {props.row[props.col.field]}
+    </Cell>
+  )
+};

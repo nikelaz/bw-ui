@@ -45,6 +45,7 @@ export const Default: Story = {
       {
         field: 'title',
         label: 'Transactions',
+        editable: true,
         headerCellRenderer() {
           return (
             <HeaderCell
@@ -73,7 +74,6 @@ export const Default: Story = {
         textAlign: 'right'
       }
     ],
-    editable: true,
     children: (
       <tfoot>
         <Row>
