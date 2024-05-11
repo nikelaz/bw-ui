@@ -40,9 +40,6 @@ type CellProps = Readonly<{
   fontSize?: 'l',
   fontWeight?: 'bold',
   colSpan?: number,
-  editable?: boolean,
-  onInput?: React.EventHandler<any>,
-  onBlur?: React.EventHandler<any>
 }>;
 
 export const Cell = (props: CellProps) => (
@@ -54,9 +51,6 @@ export const Cell = (props: CellProps) => (
       props.fontWeight && styles[`table__cell--${props.fontWeight}`]
     )}
     colSpan={props.colSpan}
-    contentEditable={props.editable}
-    onInput={props.onInput}
-    onBlur={props.onBlur}
   >
     {props.children}
   </td>

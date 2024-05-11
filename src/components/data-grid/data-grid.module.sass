@@ -1,0 +1,28 @@
+.dataGrid__cellInput
+  appearance: none
+  -webkit-appearance: none
+  -moz-appearance: none
+  background: transparent
+  border: none
+  padding: 0
+  margin: 0
+  font: inherit
+
+  &:focus
+    outline-color: var(--bw-ui-table-cellFocusOutline, #007BFF)
+    outline-offset: 0.325rem
+  
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator
+    display: none
+    -webkit-appearance: none
+  
+  &:read-only:focus
+    outline: none
+
+.dataGrid__cellInput--right
+  text-align: right
+
+.dataGrid__unit
+  display: inline-block
+  margin-left: 0.65rem

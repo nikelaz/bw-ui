@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DataGrid } from './data-grid';
+import { DataGrid, onChangeEvent } from './data-grid';
 import { Row, Cell, HeaderCell } from '../table/table';
 import { Button } from '../button/button';
 import { IconTypes } from '../icon/icon';
@@ -7,20 +7,23 @@ import { Pagination } from '../pagination/pagination';
 
 const demoData = [
   {
+    id: 1,
     title: 'Phone Bill',
-    date: '22/12/2023',
+    date: '2024-05-08',
     category: 'Utilities',
     amount: 56.40
   },
   {
+    id: 2,
     title: 'Groceries @ Store',
-    date: '22/12/2023',
+    date: '2024-05-08',
     category: 'Groceries',
     amount: 125.30
   },
   {
+    id: 3,
     title: 'Gift',
-    date: '22/12/2023',
+    date: '2024-05-08',
     category: 'Gifts',
     amount: 25.50
   }
@@ -46,6 +49,7 @@ export const Default: Story = {
         field: 'title',
         label: 'Transactions',
         editable: true,
+        fontWeight: 'bold',
         headerCellRenderer() {
           return (
             <HeaderCell
@@ -60,20 +64,29 @@ export const Default: Story = {
       {
         field: 'date',
         label: 'Date',
-        textAlign: 'right'
+        textAlign: 'right',
+        inputType: 'date',
+        editable: true,
       },
       {
         field: 'category',
         label: 'Category',
-        textAlign: 'right'
+        textAlign: 'right',
+        editable: true,
       },
       {
         field: 'amount',
         label: 'Amount',
+        inputType: 'number',
         formattingFunction: (val: number) => `$${val}`,
-        textAlign: 'right'
+        textAlign: 'right',
+        unitSuffix: '$',
+        editable: true,
       }
     ],
+    onChange: (event: onChangeEvent) => {
+      console.log('event', event);
+    },
     children: (
       <tfoot>
         <Row>
