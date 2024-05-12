@@ -1,9 +1,11 @@
-import { Table, Row, Cell, HeaderCell } from '../table/table';
+import { Table, Row, Cell, HeaderCell, TableProgress } from '../table/table';
 import { useState, useRef, useEffect } from 'react';
 import { clsx } from 'clsx';
 import styles from './data-grid.module.sass';
+import { Button } from '../button/button';
+import { IconTypes } from '../icon/icon';
 
-type Col = {
+type ColDef = {
   field: string,
   label?: string,
   textAlign?: 'right',
@@ -17,10 +19,13 @@ type Col = {
 }
 
 type DataGridProps = Readonly<{
-  cols: Array<Col>,
+  cols: Array<ColDef>,
   data: Array<any>,
   children?: React.ReactNode,
   onChange?: Function,
+  deleteRows?: boolean,
+  onDelete?: Function,
+  progressField?: string,
 }>;
 
 export const DataGrid = (props: DataGridProps) => {
@@ -29,17 +34,24 @@ export const DataGrid = (props: DataGridProps) => {
       <thead>
         <Row>
           {props.cols.map((col) => {
-            if(col.headerCellRenderer) {
+            if (col.headerCellRenderer) {
               return col.headerCellRenderer()
             }
-
-            return <HeaderCell textAlign={col.textAlign}>{col.label || col.field}</HeaderCell>
+            return <HeaderCell textAlign={col.textAlign} key={col.field}>{col.label || col.field}</HeaderCell>
           })}
         </Row>
       </thead>
       <tbody>
-        {props.data.map(row => (
-          <DataGridRow row={row} cols={props.cols} onRowChange={props.onChange} />
+        {props.data.map((row, index) => (
+          <DataGridRow
+            row={row}
+            cols={props.cols}
+            onRowChange={props.onChange}
+            deleteRows={props.deleteRows}
+            onDelete={props.onDelete}
+            key={row.id || index}
+            progressField={props.progressField}
+          />
         ))}
       </tbody>
       {props.children}
@@ -49,8 +61,11 @@ export const DataGrid = (props: DataGridProps) => {
 
 type DataGridRowProps = Readonly<{
   row: any,
-  cols: Array<Col>,
+  cols: Array<ColDef>,
   onRowChange?: Function,
+  deleteRows?: boolean,
+  onDelete?: Function,
+  progressField?: string,
 }>;
 
 export type onChangeEvent = Readonly<{
@@ -75,19 +90,32 @@ const DataGridRow = (props: DataGridRowProps) => {
     props.onRowChange(changeEventObj);
   };
 
+  const deleteClickHandler = () => {
+    if (props.onDelete) props.onDelete({ rowData });
+  };
+
   return (
-    <Row>
-      {props.cols.map((col) => (
-        <DataGridCell row={rowData} col={col} onChange={onCellValueChange}/>
-      ))}
+    <Row className={styles['dataGrid__row']}>
+      {props.cols.map((col, index) => {
+        const progressValue = props.progressField && index === 0 ? parseFloat(rowData[props.progressField]) * 100 : undefined;
+        return (
+          <DataGridCell row={rowData} col={col} onChange={onCellValueChange} key={col.field} progress={progressValue} />
+        );
+      })}
+      {props.deleteRows ? (
+        <td className={styles['dataGrid__deleteBtn']}>
+          <Button icon={IconTypes.Bin} onClick={deleteClickHandler} />
+        </td>
+      ) : null}
     </Row>
   );
 };
 
 type DataGridCellProps = Readonly<{
-  col: Col,
+  col: ColDef,
   row: any,
-  onChange?: Function
+  onChange?: Function,
+  progress?: number,
 }>;
 
 type CellChangeEvent = Readonly<{
@@ -154,6 +182,9 @@ const DataGridCell = (props: DataGridCellProps) => {
           {props.col.unitSuffix}
         </span>
       ) : null}
+      { props.progress ? (
+        <TableProgress value={props.progress} />
+      ) : null }
     </Cell>
   )
 };

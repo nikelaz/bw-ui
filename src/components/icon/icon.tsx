@@ -9,6 +9,7 @@ import { SearchIcon } from '../../icons/search';
 import { UserIcon } from '../../icons/user';
 import { WalletIcon } from '../../icons/wallet';
 import { XmarkIcon } from '../../icons/xmark';
+import { BinIcon } from '../../icons/bin';
 
 export enum IconTypes {
   Plus = 1,
@@ -21,7 +22,8 @@ export enum IconTypes {
   Search,
   User,
   Wallet,
-  XMark
+  XMark,
+  Bin,
 }
 
 export type IconProps = Readonly<{
@@ -61,5 +63,7 @@ export const Icon = (props: IconProps) => {
       return <WalletIcon {...iconProps} />
     case IconTypes.XMark:
       return <XmarkIcon {...iconProps} />
+    case IconTypes.Bin:
+      return <BinIcon {...iconProps} />
   }
 };

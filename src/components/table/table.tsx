@@ -46,6 +46,7 @@ export const Cell = (props: CellProps) => (
   <td
     className={clsx(
       styles['table__cell'],
+      props.className,
       props.textAlign && styles[`table__cell--${props.textAlign}`],
       props.fontSize && styles[`table__cell--${props.fontSize}`],
       props.fontWeight && styles[`table__cell--${props.fontWeight}`]
@@ -59,13 +60,12 @@ export const Cell = (props: CellProps) => (
 type RowProps = Readonly<{
   children: React.ReactNode,
   className?: string,
-  final?: boolean
 }>;
 
 export const Row = (props: RowProps) => (
   <tr className={clsx(
     styles['table__row'],
-    props.final && styles['table__row--final']
+    props.className
   )}>
     {props.children}
   </tr>
@@ -77,5 +77,13 @@ type TableProgressProps = Readonly<{
 }>;
 
 export const TableProgress = (props: TableProgressProps) => (
-  <progress className={styles['table__progress']} value={props.value} max={props.max || 100}>{props.value}</progress>
+  <progress
+    className={clsx(
+      styles['table__progress'],
+      props.value > 100 && styles['table__progress--overflow']
+    )}
+    value={props.value} max={props.max || 100}
+  >
+    {props.value}%
+  </progress>
 );

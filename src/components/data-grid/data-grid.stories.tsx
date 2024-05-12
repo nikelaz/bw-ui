@@ -11,21 +11,32 @@ const demoData = [
     title: 'Phone Bill',
     date: '2024-05-08',
     category: 'Utilities',
-    amount: 56.40
+    amount: 56.40,
+    progress: 0.65,
   },
   {
     id: 2,
     title: 'Groceries @ Store',
     date: '2024-05-08',
     category: 'Groceries',
-    amount: 125.30
+    amount: 125.30,
+    progress: 0.3,
   },
   {
     id: 3,
+    title: 'Rent',
+    date: '2024-05-08',
+    category: 'Housing',
+    amount: 850,
+    progress: 1,
+  },
+  {
+    id: 4,
     title: 'Gift',
     date: '2024-05-08',
     category: 'Gifts',
-    amount: 25.50
+    amount: 25.50,
+    progress: 0.78,
   }
 ];
 
@@ -35,7 +46,6 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
 } satisfies Meta<typeof DataGrid>;
 
 export default meta;
@@ -55,8 +65,9 @@ export const Default: Story = {
             <HeaderCell
               fontSize='l'
               textColor='dark'
+              key={this.field}
             >
-              {this.label || this.field}
+              {this.label}
             </HeaderCell>
           );
         }
@@ -72,7 +83,6 @@ export const Default: Story = {
         field: 'category',
         label: 'Category',
         textAlign: 'right',
-        editable: true,
       },
       {
         field: 'amount',
@@ -82,10 +92,15 @@ export const Default: Story = {
         textAlign: 'right',
         unitSuffix: '$',
         editable: true,
-      }
+      },
     ],
+    progressField: 'progress',
+    deleteRows: true,
     onChange: (event: onChangeEvent) => {
-      console.log('event', event);
+      console.log('onChange', 'event:', event);
+    },
+    onDelete: (event: onChangeEvent) => {
+      console.log('onDelete', 'event', event);
     },
     children: (
       <tfoot>

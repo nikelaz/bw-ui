@@ -26,3 +26,16 @@
 .dataGrid__unit
   display: inline-block
   margin-left: 0.65rem
+
+.dataGrid__row:focus-within
+  .dataGrid__deleteBtn
+    visibility: visible
+    pointer-events: all
+
+.dataGrid__deleteBtn
+  visibility: hidden
+  pointer-events: none
+  position: absolute
+  left: 0
+  top: 50%
+  transform: translate(calc(-100% - 0.2rem), -50%)

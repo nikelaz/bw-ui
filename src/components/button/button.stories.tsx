@@ -59,3 +59,9 @@ export const IconLinkRight: Story = {
   }
 };
 
+export const IconOnly: Story = {
+  args: {
+    icon: IconTypes.Plus,
+    iconPosition: 'right'
+  }
+};

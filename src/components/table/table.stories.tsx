@@ -62,9 +62,9 @@ export const Default: Story = {
             <Cell>
               <Button type='link' icon={IconTypes.Plus}>New Loan</Button>
             </Cell>
-            <Cell textAlign='right'>$140,000.00</Cell>
-            <Cell textAlign='right'>$1470.00</Cell>
-            <Cell textAlign='right'>$1000.00</Cell>
+            <Cell textAlign='right' fontWeight='bold'>$140,000.00</Cell>
+            <Cell textAlign='right' fontWeight='bold'>$1470.00</Cell>
+            <Cell textAlign='right' fontWeight='bold'>$1000.00</Cell>
           </Row>
         </tfoot>
       </>
@@ -124,6 +124,24 @@ export const WithPagination: Story = {
           </Row>
         </tfoot>
       </>
+    )
+  }
+};
+
+export const ProgressBarOverflow: Story = {
+  args: {
+    children: (
+      <tbody>
+        <Row>
+          <Cell fontSize='l' fontWeight='bold'>
+            <span>Student Loan</span>
+            <TableProgress value={110} />
+          </Cell>
+          <Cell textAlign='right'>$50,000.00</Cell>
+          <Cell textAlign='right'>$1500.00</Cell>
+          <Cell textAlign='right'>$1100.00</Cell>
+        </Row>
+      </tbody>
     )
   }
 };

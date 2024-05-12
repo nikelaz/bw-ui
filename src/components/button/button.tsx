@@ -3,7 +3,7 @@ import { Icon, IconTypes } from '../icon/icon';
 import { clsx } from 'clsx';
 
 type ButtonProps = Readonly<{
-  children: React.ReactNode,
+  children?: React.ReactNode,
   className?: string,
   onClick?: React.MouseEventHandler<HTMLButtonElement>,
   icon?: IconTypes,
@@ -24,12 +24,14 @@ export const Button = (props: ButtonProps) => (
     )}
   >
     { props.icon ? (
-      <span className={styles['button__icon']}>
+      <span className={props.children ? styles['button__icon'] : styles['button__content']}>
         <Icon type={props.icon} width={props.iconWidth || 14} height={props.iconHeight || 14} fill="currentColor" />
       </span>
     ) : null}
-    <span className={styles['button__content']}>
-      {props.children}
-    </span>
+    { props.children ? (
+      <span className={styles['button__content']}>
+        {props.children}
+      </span>
+    ) : null}
   </button>
 );
