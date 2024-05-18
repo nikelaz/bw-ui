@@ -1,1 +1,13 @@
 export { Button } from './components/button/button';
+export { Icon, IconTypes } from './components/icon/icon';
+export { Input } from './components/input/input';
+export { Label } from './components/label/label';
+export { Pagination } from './components/pagination/pagination';
+export { Select } from './components/select/select';
+export { Table } from './components/table/table';
+export { HeaderCell } from './components/table/header-cell';
+export { Row } from './components/table/row';
+export { TableProgress } from './components/table/table-progress';
+export { DataGrid } from './components/data-grid/data-grid';
+export { DataGridCell } from './components/data-grid/data-grid-cell';
+export { DataGridRow } from './components/data-grid/data-grid-row';

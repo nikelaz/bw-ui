@@ -1,17 +1,8 @@
-import styles from './button.module.sass';
-import { Icon, IconTypes } from '../icon/icon';
 import { clsx } from 'clsx';
+import { Icon } from '../icon/icon';
+import { ButtonProps } from './button.types';
 
-type ButtonProps = Readonly<{
-  children?: React.ReactNode,
-  className?: string,
-  onClick?: React.MouseEventHandler<HTMLButtonElement>,
-  icon?: IconTypes,
-  iconWidth?: number,
-  iconHeight?: number,
-  iconPosition?: 'right',
-  type?: 'link',
-}>;
+import styles from './button.module.sass';
 
 export const Button = (props: ButtonProps) => (
   <button

@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Table, Row, HeaderCell, Cell, TableProgress } from './table';
+import { Table } from './table';
+import { HeaderCell } from './header-cell';
+import { Row } from './row';
+import { Cell } from './cell';
+import { TableProgress } from './table-progress';
 import { Button } from '../button/button';
 import { IconTypes } from '../icon/icon';
 import { Pagination } from '../pagination/pagination';

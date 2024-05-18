@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DataGrid, onChangeEvent } from './data-grid';
-import { Row, Cell, HeaderCell } from '../table/table';
+import { DataGrid } from './data-grid';
+import { onChangeEvent } from './data-grid.types';
+import { Row } from '../table/row';
+import { Cell } from '../table/cell';
+import { HeaderCell } from '../table/header-cell'; 
 import { Button } from '../button/button';
 import { IconTypes } from '../icon/icon';
 import { Pagination } from '../pagination/pagination';
