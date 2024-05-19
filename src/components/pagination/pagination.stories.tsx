@@ -4,7 +4,7 @@ import { Button } from '../button/button';
 import { IconTypes } from '../icon/icon';
 
 const meta = {
-  title: 'Components/Pagination',
+  title: 'Navigation/Pagination',
   component: Pagination,
   parameters: {
     layout: 'centered',

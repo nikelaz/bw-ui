@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Select } from './select';
 
 const meta = {
-  title: 'Components/Select',
+  title: 'Form Components/Select',
   component: Select,
   parameters: {
     layout: 'centered',

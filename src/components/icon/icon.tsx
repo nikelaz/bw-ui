@@ -1,3 +1,4 @@
+import { IconProps } from './icon.types';
 import { PlusIcon } from '../../icons/plus';
 import { CalendarIcon } from '../../icons/calendar';
 import { ChartIcon } from '../../icons/chart';
@@ -24,15 +25,7 @@ export enum IconTypes {
   Wallet,
   XMark,
   Bin,
-}
-
-export type IconProps = Readonly<{
-  width?: number,
-  height?: number,
-  fill?: string,
-  type?: IconTypes,
-  className?:string,
-}>;
+};
 
 export const Icon = (props: IconProps) => {
   const iconProps = {

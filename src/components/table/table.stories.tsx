@@ -9,7 +9,7 @@ import { IconTypes } from '../icon/icon';
 import { Pagination } from '../pagination/pagination';
 
 const meta = {
-  title: 'Components/Table',
+  title: 'Data Visualization/Table',
   component: Table,
   parameters: {
     layout: 'centered',

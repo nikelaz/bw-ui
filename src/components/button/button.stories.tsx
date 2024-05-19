@@ -3,7 +3,7 @@ import { Button } from './button';
 import { IconTypes } from '../icon/icon';
 
 const meta = {
-  title: 'Components/Button',
+  title: 'Navigation/Button',
   component: Button,
   parameters: {
     layout: 'centered',

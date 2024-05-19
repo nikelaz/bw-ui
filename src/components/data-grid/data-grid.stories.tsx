@@ -44,7 +44,7 @@ const demoData = [
 ];
 
 const meta = {
-  title: 'Components/DataGrid',
+  title: 'Data Visualization/DataGrid',
   component: DataGrid,
   parameters: {
     layout: 'centered',
