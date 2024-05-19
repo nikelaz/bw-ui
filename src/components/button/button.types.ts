@@ -9,4 +9,5 @@ export type ButtonProps = Readonly<{
   iconHeight?: number,
   iconPosition?: 'right',
   type?: 'link',
+  autoFocus?: boolean,
 }>;

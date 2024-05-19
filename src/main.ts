@@ -11,3 +11,6 @@ export { TableProgress } from './components/table/table-progress';
 export { DataGrid } from './components/data-grid/data-grid';
 export { DataGridCell } from './components/data-grid/data-grid-cell';
 export { DataGridRow } from './components/data-grid/data-grid-row';
+export { Dialog, useDialog } from './components/dialog/dialog';
+export { DialogForm } from './components/dialog/dialog-form';
+export { DialogFooter } from './components/dialog/dialog-footer';

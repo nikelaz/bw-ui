@@ -13,6 +13,7 @@ export const Button = (props: ButtonProps) => (
       props.type && styles[`button--${props.type}`],
       props.iconPosition && styles[`button--iconRight`]
     )}
+    autoFocus={props.autoFocus}
   >
     { props.icon ? (
       <span className={props.children ? styles['button__icon'] : styles['button__content']}>
