@@ -5,6 +5,7 @@ export { Label } from './components/label/label';
 export { Pagination } from './components/pagination/pagination';
 export { Select } from './components/select/select';
 export { Table } from './components/table/table';
+export { Cell } from './components/table/cell';
 export { HeaderCell } from './components/table/header-cell';
 export { Row } from './components/table/row';
 export { TableProgress } from './components/table/table-progress';
@@ -18,3 +19,4 @@ export { MainLayout, MainLayoutContainer } from './components/main-layout/main-l
 export { SidebarNav } from './components/sidebar-nav/sidebar-nav';
 export { SidebarNavLogo } from './components/sidebar-nav/sidebar-nav-logo';
 export { SidebarNavBtn } from './components/sidebar-nav/sidebar-nav-btn';
+export type { onChangeEvent } from './components/data-grid/data-grid.types';
