@@ -8,7 +8,6 @@ export type ColDef = {
   textAlign?: 'right',
   fontSize?: 'l',
   fontWeight?: 'bold',
-  formattingFunction?: Function,
   headerCellRenderer?: Function,
   editable?: boolean,
   inputType?: 'text' | 'number' | 'date',

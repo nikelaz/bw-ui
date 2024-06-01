@@ -91,7 +91,6 @@ export const Default: Story = {
         field: 'amount',
         label: 'Amount',
         inputType: 'number',
-        formattingFunction: (val: number) => `$${val}`,
         textAlign: 'right',
         unitSuffix: '$',
         editable: true,

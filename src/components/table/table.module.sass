@@ -14,12 +14,15 @@
   position: relative
   box-sizing: border-box
 
+.table__headerCell,
+.table__cell
+  padding: 0.928rem
+  vertical-align: bottom
+
 .table__headerCell
   text-align: left
   font-size: 1.142rem
   font-weight: 600
-  padding: 0.928rem
-  vertical-align: bottom
   color: var(--bw-ui-table-headerCell-color, #555)
 
   &--l
@@ -29,9 +32,7 @@
     color: var(--bw-ui-table-headerCell-darkColor, #000)
 
 .table__cell
-  padding: 0.928rem
   border-bottom: 2px solid var(--bw-ui-table-borderColor, #ddd)
-  vertical-align: bottom
 
   &--l
     font-size: 1.214rem
