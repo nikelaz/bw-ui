@@ -1,7 +1,7 @@
 import { Icon, IconTypes } from '../icon/icon';
 import styles from './input.module.sass';
 
-interface InputProps extends React.HTMLProps<HTMLInputElement> {}
+export interface InputProps extends React.HTMLProps<HTMLInputElement> {}
 
 export const Input = (props: InputProps) => {
   let className = props.className ? `${styles.input} ${props.className}` : styles.input;

@@ -1,4 +1,4 @@
-import { IconProps } from '../components/icon/icon';
+import { IconProps } from '../components/icon/icon.types';
 
 export const GearIcon = (props: IconProps) => (
   <svg
