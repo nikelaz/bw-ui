@@ -14,3 +14,7 @@ export { DataGridRow } from './components/data-grid/data-grid-row';
 export { Dialog, useDialog } from './components/dialog/dialog';
 export { DialogForm } from './components/dialog/dialog-form';
 export { DialogFooter } from './components/dialog/dialog-footer';
+export { MainLayout, MainLayoutContainer } from './components/main-layout/main-layout';
+export { SidebarNav } from './components/sidebar-nav/sidebar-nav';
+export { SidebarNavLogo } from './components/sidebar-nav/sidebar-nav-logo';
+export { SidebarNavBtn } from './components/sidebar-nav/sidebar-nav-btn';
