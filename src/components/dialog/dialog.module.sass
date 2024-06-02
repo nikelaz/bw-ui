@@ -1,37 +1,38 @@
-.dialog
-  background-color: var(--bw-ui-dialog-bgColor, #fff)
-  border-radius: 0.714rem
-  box-shadow: 3px 7px 24px rgba(0, 0, 0, 0.18)
-  border: none
-  outline: none
-  appearance: none
-  padding: 1.428rem
-  min-width: 300px
+@layer bw-components
+  .dialog
+    background-color: var(--bw-ui-dialog-bgColor, #fff)
+    border-radius: 0.714rem
+    box-shadow: 3px 7px 24px rgba(0, 0, 0, 0.18)
+    border: none
+    outline: none
+    appearance: none
+    padding: 1.428rem
+    min-width: 300px
 
-  &::backdrop
-    background-color: var(--bw-ui-dialog-backdrop, #000)
-    opacity: 0.15
+    &::backdrop
+      background-color: var(--bw-ui-dialog-backdrop, #000)
+      opacity: 0.15
 
-.dialog__header
-  display: flex
-  padding-bottom: 1.428rem
+  .dialog__header
+    display: flex
+    padding-bottom: 1.428rem
 
-  svg
-    width: 1.07rem
-    height: 1.29rem
+    svg
+      width: 1.07rem
+      height: 1.29rem
 
-.dialog__title
-  flex-grow: 1
-  font-size: 1.25rem
-  font-weight: 600
-  line-height: 1
+  .dialog__title
+    flex-grow: 1
+    font-size: 1.25rem
+    font-weight: 600
+    line-height: 1
 
-.dialog__form
-  display: flex
-  flex-direction: column
-  gap: 20px
+  .dialog__form
+    display: flex
+    flex-direction: column
+    gap: 20px
 
-.dialog__footer
-  display: flex
-  justify-content: flex-end
-  padding-top: 1.428rem
+  .dialog__footer
+    display: flex
+    justify-content: flex-end
+    padding-top: 1.428rem

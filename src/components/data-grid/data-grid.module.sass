@@ -1,41 +1,42 @@
-.dataGrid__cellInput
-  appearance: none
-  -webkit-appearance: none
-  -moz-appearance: none
-  background: transparent
-  border: none
-  padding: 0
-  margin: 0
-  font: inherit
-
-  &:focus
-    outline-color: var(--bw-ui-table-cellFocusOutline, #007BFF)
-    outline-offset: 0.325rem
-  
-  &::-webkit-inner-spin-button,
-  &::-webkit-calendar-picker-indicator
-    display: none
+@layer bw-components
+  .dataGrid__cellInput
+    appearance: none
     -webkit-appearance: none
-  
-  &:read-only:focus
-    outline: none
+    -moz-appearance: none
+    background: transparent
+    border: none
+    padding: 0
+    margin: 0
+    font: inherit
 
-.dataGrid__cellInput--right
-  text-align: right
+    &:focus
+      outline-color: var(--bw-ui-table-cellFocusOutline, #007BFF)
+      outline-offset: 0.325rem
+    
+    &::-webkit-inner-spin-button,
+    &::-webkit-calendar-picker-indicator
+      display: none
+      -webkit-appearance: none
+    
+    &:read-only:focus
+      outline: none
 
-.dataGrid__unit
-  display: inline-block
-  margin-left: 0.65rem
+  .dataGrid__cellInput--right
+    text-align: right
 
-.dataGrid__row:focus-within
+  .dataGrid__unit
+    display: inline-block
+    margin-left: 0.65rem
+
+  .dataGrid__row:focus-within
+    .dataGrid__deleteBtn
+      visibility: visible
+      pointer-events: all
+
   .dataGrid__deleteBtn
-    visibility: visible
-    pointer-events: all
-
-.dataGrid__deleteBtn
-  visibility: hidden
-  pointer-events: none
-  position: absolute
-  left: 0
-  top: 50%
-  transform: translate(calc(-100% - 0.2rem), -50%)
+    visibility: hidden
+    pointer-events: none
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translate(calc(-100% - 0.2rem), -50%)
