@@ -1,76 +1,75 @@
-@layer components
-  .button
-    display: inline-flex
-    align-items: stretch
-    appearance: none
-    border: none
-    outline: none
-    margin: 0
-    padding: 0
+.button
+  display: inline-flex
+  align-items: stretch
+  appearance: none
+  border: none
+  outline: none
+  margin: 0
+  padding: 0
+  background-color: var(--bw-ui-button-bgColor, #007BFF)
+  color: var(--bw-ui-button-color, #fff)
+  font-size: var(--bw-ui-button-fontSize, 1rem)
+  font-weight: var(--bw-ui-button-fontWeight, 700)
+  border-radius: var(--bw-ui-button-radius, 0.714rem)
+  transition: .2s background-color, .2s box-shadow
+  cursor: pointer
+  overflow: hidden
+
+  &:hover
+    background-color: var(--bw-ui-button-bgHoverColor, #0061ca)
+
+  &:active
     background-color: var(--bw-ui-button-bgColor, #007BFF)
-    color: var(--bw-ui-button-color, #fff)
-    font-size: var(--bw-ui-button-fontSize, 1rem)
-    font-weight: var(--bw-ui-button-fontWeight, 700)
-    border-radius: var(--bw-ui-button-radius, 0.714rem)
-    transition: .2s background-color, .2s box-shadow
-    cursor: pointer
-    overflow: hidden
 
-    &:hover
-      background-color: var(--bw-ui-button-bgHoverColor, #0061ca)
-
-    &:active
-      background-color: var(--bw-ui-button-bgColor, #007BFF)
-
-    &:focus
-      outline: 3px solid var(--bw-ui-button-focusOutlineColor, rgba(0, 97, 202, 0.3))
+  &:focus
+    outline: 3px solid var(--bw-ui-button-focusOutlineColor, rgba(0, 97, 202, 0.3))
+  
+  &--link
+    background-color: transparent
+    color: var(--bw-ui-button-bgColor, #007BFF)
+    border-radius: 0
+    gap: 5px
+  
+    .button__content,
+    .button__icon
+      background-color: transparent
+      padding: 0
     
-    &--link
+    .button__icon
+      svg
+        width: 0.75em
+        height: 0.75em     
+
+    &:hover,
+    &:focus
+      background-color: transparent
+      color: var(--bw-ui-button-bgHoverColor, #0061ca)
+      outline: none
+    
+    &:active
       background-color: transparent
       color: var(--bw-ui-button-bgColor, #007BFF)
-      border-radius: 0
-      gap: 5px
-    
-      .button__content,
-      .button__icon
-        background-color: transparent
-        padding: 0
-      
-      .button__icon
-        svg
-          width: 0.75em
-          height: 0.75em     
 
-      &:hover,
-      &:focus
-        background-color: transparent
-        color: var(--bw-ui-button-bgHoverColor, #0061ca)
-        outline: none
-      
-      &:active
-        background-color: transparent
-        color: var(--bw-ui-button-bgColor, #007BFF)
+.button__icon + .button__content
+  text-align: left
 
-  .button__icon + .button__content
-    text-align: left
+.button__content,
+.button__icon
+  display: flex
+  align-items: center
+  padding: 0.5rem 0.857rem
+  line-height: 1
 
-  .button__content,
-  .button__icon
-    display: flex
-    align-items: center
-    padding: 0.5rem 0.857rem
-    line-height: 1
+svg
+  display: block
+
+.button__icon
+  background-color: rgba(0, 0, 0, 0.07)
 
   svg
-    display: block
+    width: 1rem
+    height: 1rem
 
+.button--iconRight
   .button__icon
-    background-color: rgba(0, 0, 0, 0.07)
-
-    svg
-      width: 1rem
-      height: 1rem
-
-  .button--iconRight
-    .button__icon
-      order: 1
+    order: 1

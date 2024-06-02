@@ -1,42 +1,41 @@
-@layer components
-  .input
-    padding: 0.858rem 1rem
-    font-size: 1rem
-    font-weight: 500
-    line-height: 1
-    color: var(--bw-ui-input-color, #000)
-    border: 1px solid var(--bw-ui-input-border, #E6E6E6)
-    border-radius: 10px
-    background-color: var(--bw-ui-input-bgColor, #F9F9F9)
-    transition: .2s border-color
-    appearance: none
-    min-width: 24rem
+.input
+  padding: 0.858rem 1rem
+  font-size: 1rem
+  font-weight: 500
+  line-height: 1
+  color: var(--bw-ui-input-color, #000)
+  border: 1px solid var(--bw-ui-input-border, #E6E6E6)
+  border-radius: 10px
+  background-color: var(--bw-ui-input-bgColor, #F9F9F9)
+  transition: .2s border-color
+  appearance: none
+  min-width: 24rem
 
-    &::placeholder
-      color: var(--bw-ui-input-phColor, #333)
-    
-    &:focus
-      outline: none
-      border-color: var(--bw-ui-input-focusBorder, #bbb)
-    
-    &[type="search"]
-      padding-left: 3rem  
+  &::placeholder
+    color: var(--bw-ui-input-phColor, #333)
+  
+  &:focus
+    outline: none
+    border-color: var(--bw-ui-input-focusBorder, #bbb)
+  
+  &[type="search"]
+    padding-left: 3rem  
 
-  .input__wrapper
-    position: relative
+.input__wrapper
+  position: relative
 
-    svg
-      width: 1rem
-      height: 1rem
-      position: absolute
-      top: 50%
-      left: 1rem
-      transform: translateY(-50%)
-      fill: var(--bw-ui-input-phColor, #333)
-      transition: .2s fill
+  svg
+    width: 1rem
+    height: 1rem
+    position: absolute
+    top: 50%
+    left: 1rem
+    transform: translateY(-50%)
+    fill: var(--bw-ui-input-phColor, #333)
+    transition: .2s fill
 
-  .checkbox
-    accent-color: var(--bw-ui-checkbox-accent, #007BFF)
-    width: 1.285rem
-    height: 1.285rem
-    margin: 0
+.checkbox
+  accent-color: var(--bw-ui-checkbox-accent, #007BFF)
+  width: 1.285rem
+  height: 1.285rem
+  margin: 0

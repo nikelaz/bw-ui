@@ -48,6 +48,7 @@ export const DataGridCell = (props: DataGridCellProps) => {
     <Cell
       fontSize={props.col.fontSize}
       fontWeight={props.col.fontWeight}
+      textAlign={props.col.textAlign}
     >
       <input
         className={clsx(
