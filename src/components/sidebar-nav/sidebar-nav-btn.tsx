@@ -12,6 +12,7 @@ export const SidebarNavBtn = (props: SidebarNavBtnProps) => (
     )}
     aria-label={props.label}
     title={props.label}
+    onClick={props.onClick}
   >
     {props.children}
   </button>
