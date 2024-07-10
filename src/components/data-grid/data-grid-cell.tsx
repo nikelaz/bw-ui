@@ -50,7 +50,7 @@ export const DataGridCell = (props: DataGridCellProps) => {
       fontWeight={props.col.fontWeight}
       textAlign={props.col.textAlign}
     >
-      <div className="dataGrid__cellWrapper">
+      <div className={styles['dataGrid__cellWrapper']}>
         <input
           className={clsx(
             styles['dataGrid__cellInput'],
