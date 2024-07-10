@@ -50,24 +50,26 @@ export const DataGridCell = (props: DataGridCellProps) => {
       fontWeight={props.col.fontWeight}
       textAlign={props.col.textAlign}
     >
-      <input
-        className={clsx(
-          styles['dataGrid__cellInput'],
-          props.col.textAlign === 'right' && styles['dataGrid__cellInput--right'])
-        }
-        readOnly={!props.col.editable}
-        type={props.col.inputType || 'text'}
-        value={cellValue}
-        onChange={(e) => setCellValue(e.target.value)}
-        onBlur={blurHandler}
-        ref={inputRef}
-        onFocus={props.col.inputType && props.col.inputType === 'date' ? focusHandler : undefined}
-      />
-      { props.col.unitSuffix ? (
-        <span className={styles['dataGrid__unit']}>
-          {props.col.unitSuffix}
-        </span>
-      ) : null}
+      <div className="dataGrid__cellWrapper">
+        <input
+          className={clsx(
+            styles['dataGrid__cellInput'],
+            props.col.textAlign === 'right' && styles['dataGrid__cellInput--right'])
+          }
+          readOnly={!props.col.editable}
+          type={props.col.inputType || 'text'}
+          value={cellValue}
+          onChange={(e) => setCellValue(e.target.value)}
+          onBlur={blurHandler}
+          ref={inputRef}
+          onFocus={props.col.inputType && props.col.inputType === 'date' ? focusHandler : undefined}
+        />
+        { props.col.unitSuffix ? (
+          <span className={styles['dataGrid__unit']}>
+            {props.col.unitSuffix}
+          </span>
+        ) : null}
+      </div>
       { props.progress ? (
         <TableProgress value={props.progress} />
       ) : null }
