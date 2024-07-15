@@ -8,4 +8,5 @@ export type SidebarNavBtnProps = Readonly<{
   label: string,
   isActive?: boolean,
   className?: string,
+  onClick?: Function
 }>;
