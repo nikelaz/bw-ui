@@ -18,6 +18,7 @@ export type CellProps = Readonly<{
   fontSize?: 'l',
   fontWeight?: 'bold',
   colSpan?: number,
+  unitSuffix?: string,
 }>;
 
 export type RowProps = Readonly<{

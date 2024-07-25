@@ -7,10 +7,13 @@
   padding: 0
   margin: 0
   font: inherit
+  border-radius: 2px
 
   &:focus
     outline-color: var(--bw-ui-table-cellFocusOutline, #007BFF)
-    outline-offset: 0.325rem
+    outline-offset: 0.45rem
+    outline-style: solid
+    outline-width: 2px
   
   &::-webkit-inner-spin-button,
   &::-webkit-calendar-picker-indicator
@@ -20,14 +23,15 @@
   &:read-only:focus
     outline: none
 
+.dataGrid__row
+  position: relative
+ 
 .dataGrid__cellInput--right
   text-align: right
 
-.dataGrid__unit
-  display: inline-block
-  margin-left: 0.65rem
-
 .dataGrid__row:focus-within
+  background-color: #e6e6e6
+
   .dataGrid__deleteBtn
     visibility: visible
     pointer-events: all
@@ -36,6 +40,14 @@
   visibility: hidden
   pointer-events: none
   position: absolute
-  left: 0
+  right: 1px
   top: 50%
-  transform: translate(calc(-100% - 0.2rem), -50%)
+  transform: translate(100%, -50%)
+  background-color: #e6e6e6
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  padding-left: 0.85em
+  padding-right: 0.85em
+
