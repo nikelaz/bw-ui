@@ -49,6 +49,7 @@ export const DataGridCell = (props: DataGridCellProps) => {
       fontSize={props.col.fontSize}
       fontWeight={props.col.fontWeight}
       textAlign={props.col.textAlign}
+      unitSuffix={props.col.unitSuffix}
     >
       <div className={styles['dataGrid__cellWrapper']}>
         <input
@@ -64,11 +65,6 @@ export const DataGridCell = (props: DataGridCellProps) => {
           ref={inputRef}
           onFocus={props.col.inputType && props.col.inputType === 'date' ? focusHandler : undefined}
         />
-        { props.col.unitSuffix ? (
-          <span className={styles['dataGrid__unit']}>
-            {props.col.unitSuffix}
-          </span>
-        ) : null}
       </div>
       { props.progress ? (
         <TableProgress value={props.progress} />

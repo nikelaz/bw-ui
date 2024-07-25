@@ -14,6 +14,13 @@ export const Cell = (props: CellProps) => (
     )}
     colSpan={props.colSpan}
   >
-    {props.children}
+    <div className={styles['table__cell_wrapper']}>
+      {props.children}
+      {props.unitSuffix ? (
+        <span className={styles['table__cell__unit']}>
+          {props.unitSuffix}
+        </span>
+      ) : null}
+    </div>
   </td>
 );
