@@ -1,5 +1,6 @@
 export type onChangeEvent = Readonly<{
-  rowData: any
+  rowData: any,
+  index: number,
 }>;
 
 export type ColDef = {
@@ -22,12 +23,14 @@ export type DataGridProps = Readonly<{
   deleteRows?: boolean,
   onDelete?: Function,
   progressField?: string,
+  tfootRenderer?: Function,
 }>;
 
 export type DataGridRowProps = Readonly<{
   row: any,
+  index: number,
   cols: Array<ColDef>,
-  onRowChange?: Function,
+  onRowChange: Function,
   deleteRows?: boolean,
   onDelete?: Function,
   progressField?: string,

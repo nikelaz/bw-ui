@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { DataGridRowProps, CellChangeEvent, onChangeEvent } from './data-grid.types';
 import { Row } from '../table/row';
 import { Button } from '../button/button';
@@ -8,35 +7,31 @@ import { DataGridCell } from './data-grid-cell';
 import styles from './data-grid.module.sass';
 
 export const DataGridRow = (props: DataGridRowProps) => {
-  const [rowData, setRowData] = useState(props.row);
-
   const onCellValueChange = (event: CellChangeEvent) => {
     const updatedRow = {
-      ...rowData,
+      ...props.row,
       [event.key]: event.value
     };
 
-    setRowData(updatedRow);
-
-    if (typeof props.onRowChange !== 'function') return;
-
     const changeEvent: onChangeEvent = {
-      rowData: updatedRow
+      rowData: updatedRow,
+      index: props.index,
     };
+
     props.onRowChange(changeEvent);
   };
 
   const deleteClickHandler = () => {
-    if (props.onDelete) props.onDelete({ rowData });
+    if (props.onDelete) props.onDelete(props.row);
   };
 
   return (
     <Row className={styles['dataGrid__row']}>
       {props.cols.map((col, index) => {
-        const progressValue = props.progressField && index === 0 ? parseFloat(rowData[props.progressField]) * 100 : undefined;
+        const progressValue = props.progressField && index === 0 ? parseFloat(props.row[props.progressField]) * 100 : undefined;
         return (
           <DataGridCell
-            row={rowData}
+            row={props.row}
             col={col}
             onChange={onCellValueChange}
             progress={progressValue}
