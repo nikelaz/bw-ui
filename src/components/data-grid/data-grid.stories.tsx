@@ -15,7 +15,6 @@ const demoData = [
     date: '2024-05-08',
     category: 'Utilities',
     amount: 56.40,
-    progress: 0.65,
   },
   {
     id: 2,
@@ -23,7 +22,6 @@ const demoData = [
     date: '2024-05-08',
     category: 'Groceries',
     amount: 125.30,
-    progress: 0.3,
   },
   {
     id: 3,
@@ -31,7 +29,6 @@ const demoData = [
     date: '2024-05-08',
     category: 'Housing',
     amount: 850,
-    progress: 1,
   },
   {
     id: 4,
@@ -39,7 +36,6 @@ const demoData = [
     date: '2024-05-08',
     category: 'Gifts',
     amount: 25.50,
-    progress: 0.78,
   }
 ];
 
@@ -96,7 +92,9 @@ export const Default: Story = {
         editable: true,
       },
     ],
-    progressField: 'progress',
+    progressComputeFunction: (row: any) => {
+      return parseFloat(row.amount) / 2;
+    },
     deleteRows: true,
     onChange: (event: onChangeEvent) => {
       console.log('onChange', 'event:', event);

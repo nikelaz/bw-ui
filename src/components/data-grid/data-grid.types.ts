@@ -24,6 +24,7 @@ export type DataGridProps = Readonly<{
   onDelete?: Function,
   progressField?: string,
   tfootRenderer?: Function,
+  progressComputeFunction?: Function,
 }>;
 
 export type DataGridRowProps = Readonly<{
@@ -33,7 +34,7 @@ export type DataGridRowProps = Readonly<{
   onRowChange: Function,
   deleteRows?: boolean,
   onDelete?: Function,
-  progressField?: string,
+  progressComputeFunction?: Function,
 }>;
 
 

@@ -41,7 +41,7 @@ export const DataGrid = (props: DataGridProps) => {
             deleteRows={props.deleteRows}
             onDelete={props.onDelete}
             key={row.id || index}
-            progressField={props.progressField}
+            progressComputeFunction={props.progressComputeFunction}
           />
         ))}
       </tbody>

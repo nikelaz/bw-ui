@@ -25,16 +25,21 @@ export const DataGridRow = (props: DataGridRowProps) => {
     if (props.onDelete) props.onDelete(props.row);
   };
 
+  let progressValue = 0;
+
+  if (props.progressComputeFunction) {
+    progressValue = props.progressComputeFunction(props.row);
+  }
+
   return (
     <Row className={styles['dataGrid__row']}>
       {props.cols.map((col, index) => {
-        const progressValue = props.progressField && index === 0 ? parseFloat(props.row[props.progressField]) * 100 : undefined;
         return (
           <DataGridCell
             row={props.row}
             col={col}
             onChange={onCellValueChange}
-            progress={progressValue}
+            progress={index === 0 ? progressValue : undefined}
             key={col.field}
           />
         );
