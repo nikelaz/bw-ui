@@ -8,13 +8,15 @@ export const Cell = (props: CellProps) => (
     className={clsx(
       styles['table__cell'],
       props.className,
-      props.textAlign && styles[`table__cell--${props.textAlign}`],
       props.fontSize && styles[`table__cell--${props.fontSize}`],
       props.fontWeight && styles[`table__cell--${props.fontWeight}`]
     )}
     colSpan={props.colSpan}
   >
-    <div className={styles['table__cell_wrapper']}>
+    <div className={clsx(
+      styles['table__cell_wrapper'],
+      props.textAlign && styles[`table__cell--${props.textAlign}`]
+    )}>
       {props.children}
       {props.unitSuffix ? (
         <span className={styles['table__cell__unit']}>
