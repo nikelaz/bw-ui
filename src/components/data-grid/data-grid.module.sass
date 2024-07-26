@@ -31,7 +31,8 @@
   text-align: right
 
 .dataGrid__row:focus-within
-  background-color: #e6e6e6
+  background-color: #fff
+  box-shadow: 0.142rem 0.214rem 0.714rem rgba(0, 0, 0, 0.1)
 
   .dataGrid__deleteBtn
     visibility: visible
@@ -43,12 +44,24 @@
   position: absolute
   right: 1px
   top: 50%
+  margin-top: -1px
   transform: translate(100%, -50%)
-  background-color: #e6e6e6
-  height: 100%
+  background-color: #fff
+  height: calc(100% - 2px)
   display: flex
   align-items: center
   justify-content: center
   padding-left: 0.85em
   padding-right: 0.85em
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.1)
 
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    background: #fff
+    width: 0.5rem
+    height: 100%
+    transform: translateX(-100%)
