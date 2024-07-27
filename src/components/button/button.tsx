@@ -10,9 +10,10 @@ export const Button = (props: ButtonProps) => (
     className={clsx(
       styles['button'],
       props.className,
-      props.type && styles[`button--${props.type}`],
+      props.style && styles[`button--${props.style}`],
       props.iconPosition && styles[`button--iconRight`]
     )}
+    type={props.type}
     autoFocus={props.autoFocus}
   >
     { props.icon ? (
