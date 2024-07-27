@@ -19,8 +19,8 @@ export const Default: Story = {
   args: {
     children: (
       <>
-        <Button type='link' icon={IconTypes.ChevronLeft}>Previous</Button>
-        <Button type='link' icon={IconTypes.ChevronRight} iconPosition='right'>Next</Button>
+        <Button style='link' icon={IconTypes.ChevronLeft}>Previous</Button>
+        <Button style='link' icon={IconTypes.ChevronRight} iconPosition='right'>Next</Button>
       </>
     )
   }

@@ -47,7 +47,7 @@ export const DataGridRow = (props: DataGridRowProps) => {
       })}
       {props.deleteRows ? (
         <td className={styles['dataGrid__deleteBtn']}>
-          <Button type="link" icon={IconTypes.Bin} onClick={deleteClickHandler} />
+          <Button style="link" type="button" icon={IconTypes.Bin} onClick={deleteClickHandler} />
         </td>
       ) : null}
     </Row>

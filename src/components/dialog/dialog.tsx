@@ -40,7 +40,7 @@ export const Dialog = (props: DialogProps) => {
       <div className={styles['dialog__header']}>
         <div className={styles['dialog__title']}>{props.title}</div>
         {props.hasCloseBtn ? (
-          <Button icon={IconTypes.XMark} type="link" onClick={props.onClose} />
+          <Button icon={IconTypes.XMark} style="link" onClick={props.onClose} />
         ): null}
       </div>
       <div>

@@ -64,7 +64,7 @@ export const Default: Story = {
         <tfoot>
           <Row>
             <Cell>
-              <Button type='link' icon={IconTypes.Plus}>New Loan</Button>
+              <Button style='link' icon={IconTypes.Plus}>New Loan</Button>
             </Cell>
             <Cell textAlign='right' fontWeight='bold'>$140,000.00</Cell>
             <Cell textAlign='right' fontWeight='bold'>$1470.00</Cell>
@@ -117,12 +117,12 @@ export const WithPagination: Story = {
         <tfoot>
           <Row>
             <Cell>
-              <Button type='link' icon={IconTypes.Plus}>New Transaction</Button>
+              <Button style='link' icon={IconTypes.Plus}>New Transaction</Button>
             </Cell>
             <Cell textAlign='right' colSpan={3}>
               <Pagination>
-                <Button type='link' icon={IconTypes.ChevronLeft}>Previous</Button>
-                <Button type='link' icon={IconTypes.ChevronRight} iconPosition='right'>Next</Button>
+                <Button style='link' icon={IconTypes.ChevronLeft}>Previous</Button>
+                <Button style='link' icon={IconTypes.ChevronRight} iconPosition='right'>Next</Button>
               </Pagination>
             </Cell>
           </Row>

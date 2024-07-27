@@ -38,14 +38,14 @@ export const IconButtonRight: Story = {
 export const Link: Story = {
   args: {
     children: 'Link Button',
-    type: 'link'
+    style: 'link'
   }
 };
 
 export const IconLink: Story = {
   args: {
     children: 'Link Button',
-    type: 'link',
+    style: 'link',
     icon: IconTypes.Plus
   }
 };
@@ -53,7 +53,7 @@ export const IconLink: Story = {
 export const IconLinkRight: Story = {
   args: {
     children: 'Link Button',
-    type: 'link',
+    style: 'link',
     icon: IconTypes.Plus,
     iconPosition: 'right'
   }
