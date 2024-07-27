@@ -20,3 +20,6 @@ export { SidebarNav } from './components/sidebar-nav/sidebar-nav';
 export { SidebarNavLogo } from './components/sidebar-nav/sidebar-nav-logo';
 export { SidebarNavBtn } from './components/sidebar-nav/sidebar-nav-btn';
 export type { onChangeEvent } from './components/data-grid/data-grid.types';
+export type { DropdownOption } from './components/dropdown/dropdown.types';
+export { Dropdown } from './components/dropdown/dropdown';
+export { MonthsSwitch } from './components/months-switch/months-switch';
