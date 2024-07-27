@@ -65,6 +65,7 @@ export const Dropdown = (props: DropdownProps) => {
               styles['dropdown__panel__btn'],
               option.isActive && styles['dropdown__panel__btn--is-active']
             )}
+            key={option.value.toString()}
           >
             {option.label}
           </button>
