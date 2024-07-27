@@ -3,7 +3,7 @@ import { Row } from '../table/row';
 import { HeaderCell } from '../table/header-cell';
 import { DataGridRow } from './data-grid-row';
 import { DataGridProps } from './data-grid.types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { flatten, unflatten } from 'flat';
 
 export const DataGrid = (props: DataGridProps) => {
@@ -18,6 +18,10 @@ export const DataGrid = (props: DataGridProps) => {
       rowData: unflatten(rowData)
     });
   };
+
+  useEffect(() => {
+    setData(props.data.map(node => flatten(node)));
+  }, [props.data]);
 
   return (
     <Table>
