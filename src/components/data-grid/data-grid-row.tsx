@@ -3,6 +3,7 @@ import { Row } from '../table/row';
 import { Button } from '../button/button';
 import { IconTypes } from '../icon/icon';
 import { DataGridCell } from './data-grid-cell';
+import { unflatten } from 'flat';
 
 import styles from './data-grid.module.sass';
 
@@ -22,13 +23,13 @@ export const DataGridRow = (props: DataGridRowProps) => {
   };
 
   const deleteClickHandler = () => {
-    if (props.onDelete) props.onDelete(props.row);
+    if (props.onDelete) props.onDelete(unflatten(props.row));
   };
 
   let progressValue = 0;
 
   if (props.progressComputeFunction) {
-    progressValue = props.progressComputeFunction(props.row);
+    progressValue = props.progressComputeFunction(unflatten(props.row));
   }
 
   return (

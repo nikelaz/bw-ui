@@ -4,15 +4,19 @@ import { HeaderCell } from '../table/header-cell';
 import { DataGridRow } from './data-grid-row';
 import { DataGridProps } from './data-grid.types';
 import { useState } from 'react';
+import { flatten, unflatten } from 'flat';
 
 export const DataGrid = (props: DataGridProps) => {
-  const [data, setData] = useState(props.data);
+  const flattenedData = props.data.map(node => flatten(node));
+  const [data, setData] = useState(flattenedData);
 
   const onRowChange = ({ rowData, index }: any) => {
     const dataCopy = [...data];
     dataCopy[index] = rowData;
     setData(dataCopy);
-    if (props.onChange) props.onChange({rowData});
+    if (props.onChange) props.onChange({
+      rowData: unflatten(rowData)
+    });
   };
 
   return (
@@ -32,7 +36,7 @@ export const DataGrid = (props: DataGridProps) => {
         </Row>
       </thead>
       <tbody>
-        {data.map((row, index) => (
+        {data.map((row: any, index) => (
           <DataGridRow
             row={row}
             index={index}
