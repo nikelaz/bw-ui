@@ -12,6 +12,9 @@ export const Cell = (props: CellProps) => (
       props.fontWeight && styles[`table__cell--${props.fontWeight}`]
     )}
     colSpan={props.colSpan}
+    style={{
+      width: props.width
+    }}
   >
     <div className={clsx(
       styles['table__cell_wrapper'],

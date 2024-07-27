@@ -90,6 +90,7 @@ export const Default: Story = {
         textAlign: 'right',
         unitSuffix: '$',
         editable: true,
+        width: '5rem',
       },
     ],
     progressComputeFunction: (row: any) => {

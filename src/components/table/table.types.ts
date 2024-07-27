@@ -9,6 +9,7 @@ export type HeaderCellProps = Readonly<{
   fontSize?: 'l',
   textColor?: 'dark',
   textAlign?: 'right',
+  width?: string,
 }>;
 
 export type CellProps = Readonly<{
@@ -19,6 +20,7 @@ export type CellProps = Readonly<{
   fontWeight?: 'bold',
   colSpan?: number,
   unitSuffix?: string,
+  width?: string,
 }>;
 
 export type RowProps = Readonly<{

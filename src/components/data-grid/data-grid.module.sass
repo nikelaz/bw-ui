@@ -3,16 +3,20 @@
   appearance: none
   -webkit-appearance: none
   -moz-appearance: textfield
+  width: 0
   background: transparent
   border: none
-  padding: 0
-  margin: 0
+  padding: 0.45em
+  margin: -0.45em
   font: inherit
-  border-radius: 2px
+  border-radius: 3px
+
+  &:not([readonly]):hover
+    background-color: rgba(0, 0, 0, 0.05)
 
   &:focus
+    background-color: #fff !important
     outline-color: var(--bw-ui-table-cellFocusOutline, #007BFF)
-    outline-offset: 0.45rem
     outline-style: solid
     outline-width: 2px
   

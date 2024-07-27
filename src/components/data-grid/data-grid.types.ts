@@ -12,7 +12,8 @@ export type ColDef = {
   headerCellRenderer?: Function,
   editable?: boolean,
   inputType?: 'text' | 'number' | 'date',
-  unitSuffix?: string
+  unitSuffix?: string,
+  width?: string,
 }
 
 export type DataGridProps = Readonly<{

@@ -11,6 +11,9 @@ export const HeaderCell = (props: HeaderCellProps) => (
       props.textColor && styles[`table__headerCell--${props.textColor}`],
       props.textAlign && styles[`table__headerCell--${props.textAlign}`],
     )}
+    style={{
+      width: props.width
+    }}
   >
     {props.children}
   </th>

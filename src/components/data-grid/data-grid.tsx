@@ -28,7 +28,7 @@ export const DataGrid = (props: DataGridProps) => {
               return col.headerCellRenderer()
             }
             return (
-              <HeaderCell textAlign={col.textAlign} key={col.field}>
+              <HeaderCell textAlign={col.textAlign} key={col.field} width={col.width}>
                 {col.label || col.field}
               </HeaderCell>
             )
