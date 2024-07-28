@@ -7,14 +7,25 @@ import DateUtilities from './date-utilities';
 
 import styles from './data-grid.module.sass';
 
-export const DataGridCell = (props: DataGridCellProps) => {
-  let initialValue = props.row[props.col.field];
-  if (props.col.inputType === 'date') {
-    initialValue = DateUtilities.toISOString(initialValue);
+
+const formatCellValue = (input: any, inputType: string) => {
+  let val = input;
+  if (inputType === 'date') {
+    val = DateUtilities.toISOString(val);
   }
+  return val;
+}
+
+export const DataGridCell = (props: DataGridCellProps) => {
+  let initialValue = formatCellValue(props.row[props.col.field], props.col.inputType);
   const [cachedValue, setCachedValue] = useState(initialValue);
   const [cellValue, setCellValue] = useState(initialValue);
   const inputRef: React.MutableRefObject<HTMLInputElement | null> = useRef(null);
+
+  useEffect(() => {
+    let newValue = formatCellValue(props.row[props.col.field], props.col.inputType);
+    setCellValue(newValue);
+  }, [setCellValue, props.row]);
 
   useEffect(() => {
     const keydownHandler = (event: KeyboardEvent) => {
