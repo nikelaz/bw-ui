@@ -8,7 +8,7 @@ import DateUtilities from './date-utilities';
 import styles from './data-grid.module.sass';
 
 
-const formatCellValue = (input: any, inputType: string) => {
+const formatCellValue = (input: any, inputType?: string) => {
   let val = input;
   if (inputType === 'date') {
     val = DateUtilities.toISOString(val);
