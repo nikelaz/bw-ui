@@ -3,11 +3,15 @@ import { clsx } from 'clsx';
 import { DataGridCellProps, CellChangeEvent } from './data-grid.types';
 import { Cell } from '../table/cell';
 import { TableProgress } from '../table/table-progress';
+import DateUtilities from './date-utilities';
 
 import styles from './data-grid.module.sass';
 
 export const DataGridCell = (props: DataGridCellProps) => {
-  const initialValue = props.row[props.col.field];
+  let initialValue = props.row[props.col.field];
+  if (props.col.inputType === 'date') {
+    initialValue = DateUtilities.toISOString(initialValue);
+  }
   const [cachedValue, setCachedValue] = useState(initialValue);
   const [cellValue, setCellValue] = useState(initialValue);
   const inputRef: React.MutableRefObject<HTMLInputElement | null> = useRef(null);

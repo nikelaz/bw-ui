@@ -33,7 +33,7 @@ const demoData = [
   {
     id: 4,
     title: 'Gift',
-    date: '2024-05-08',
+    date: '2024-06-01T00:00:00.000Z',
     category: 'Gifts',
     amount: 25.50,
   }
@@ -77,6 +77,7 @@ export const Default: Story = {
         textAlign: 'right',
         inputType: 'date',
         editable: true,
+        width: '15rem',
       },
       {
         field: 'category',
