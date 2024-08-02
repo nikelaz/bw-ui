@@ -1,7 +1,8 @@
 export type DropdownOption = {
   value: any,
-  label: string,
+  label: React.ReactNode,
   isActive: boolean,
+  onClick: Function,
 };
 
 export type DropdownProps = Readonly<{

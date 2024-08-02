@@ -60,7 +60,7 @@ export const Dropdown = (props: DropdownProps) => {
       <div className={styles['dropdown__panel']}>
         { options.map(option => (
           <button
-            onClick={() => optionClickHandler(option)}
+            onClick={option.onClick ? () => option.onClick(option) : () => optionClickHandler(option)}
             className={clsx(
               styles['dropdown__panel__btn'],
               option.isActive && styles['dropdown__panel__btn--is-active']
