@@ -9,6 +9,11 @@ export const Dropdown = (props: DropdownProps) => {
   const dropdownRef: React.MutableRefObject<HTMLDivElement | null> = useRef(null);
 
   const optionClickHandler = (selectedOption: DropdownOption) => {
+    if (selectedOption.onClick) {
+      selectedOption.onClick(selectedOption);
+      return;
+    }
+
     const updatedOptions = options.map(option => {
       if (option === selectedOption) {
         return {
@@ -60,7 +65,7 @@ export const Dropdown = (props: DropdownProps) => {
       <div className={styles['dropdown__panel']}>
         { options.map(option => (
           <button
-            onClick={option.onClick ? () => option.onClick(option) : () => optionClickHandler(option)}
+            onClick={() => optionClickHandler(option)}
             className={clsx(
               styles['dropdown__panel__btn'],
               option.isActive && styles['dropdown__panel__btn--is-active']
