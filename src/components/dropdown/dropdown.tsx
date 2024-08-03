@@ -56,6 +56,10 @@ export const Dropdown = (props: DropdownProps) => {
       document.removeEventListener('click', documentClickHandler);
     };
   });
+
+  useEffect(() => {
+    setOptions(props.options);
+  }, [setOptions, props.options]);
   
   return (
     <div ref={dropdownRef} className={clsx(styles['dropdown'], isOpen && styles['dropdown--is-open'])}>
