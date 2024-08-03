@@ -9,11 +9,15 @@ import styles from './data-grid.module.sass';
 
 
 const formatCellValue = (input: any, inputType?: string) => {
-  let val = input;
-  if (inputType === 'date') {
-    val = DateUtilities.toISOString(val);
+  if (input === null) {
+    return '';
   }
-  return val;
+
+  if (inputType === 'date') {
+    return DateUtilities.toISOString(input);
+  }
+
+  return input;
 }
 
 export const DataGridCell = (props: DataGridCellProps) => {
