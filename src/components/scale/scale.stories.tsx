@@ -25,3 +25,17 @@ export const Default: Story = {
     rightLabel: 'Current Cash'
   }
 };
+
+export const Overflow: Story = {
+  args: {
+    topValue: 5000,
+    topLabel: 'Planned',
+    unit: '$',
+    progress: 120,
+    leftValue: 6000,
+    leftLabel: 'Actual',
+    rightValue: -1000,
+    rightLabel: 'Current Cash'
+  }
+};
+
