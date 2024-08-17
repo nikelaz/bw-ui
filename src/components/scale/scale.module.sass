@@ -1,0 +1,86 @@
+.scale__textNode
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 1px
+  color: var(--bw-ui-scale-neutralColor, #555)
+
+.scale__textNode--progress
+  color: var(--bw-ui-scale-progressColor, #FF9500)
+
+.scale__textNode--balance
+  color: var(--bw-ui-scale-balanceColor, #34C759)
+
+.scale__textNode__value
+  font-size: 1.071rem
+  font-weight: 600
+  line-height: 1
+  color: currentColor
+
+.scale__textNode__label
+  font-size: 0.786rem
+  font-weight: 700
+  color: currentColor
+  text-transform: uppercase
+  white-space: nowrap
+
+.scale__progress__wrap
+  min-width: 20rem
+
+.scale__progress
+  position: relative
+  display: flex
+  border: 1px dashed var(--bw-ui-scale-neutralColor, #555)
+  border-radius: 1rem
+  padding: 0.285rem
+  gap: 0.357rem
+  height: auto
+
+.scale__progress__bar
+  display: block
+  position: relative
+  background-color: #ff9500
+  height: 0.714rem
+  border-radius: 1em
+  min-width: 1rem
+
+.scale__progress__balance
+  display: block
+  position: relative
+  min-width: 0.857rem
+  flex-grow: 1
+  height: 0.714rem
+  appearance: none
+  background-color: #34C759
+  border-radius: 1rem
+  min-width: 1rem
+
+.scale__a11y
+  position: absolute
+  left: -10000px
+  top: auto
+  width: 1px
+  height: 1px
+  overflow: hidden
+
+.scale__progress__bar__label
+  position: absolute
+  top: calc(100% + 1.071rem)
+  left: 50%
+  transform: translateX(-50%)
+
+.scale__topLabel
+  margin-bottom: 0.714rem
+
+.scale--overflow
+  .scale__progress__balance
+    display: none
+  
+  .scale__progress__bar
+    background-color: #FF3A30
+  
+  .scale__textNode--progress
+    color: #FF3A30
+  
+  .scale__progress
+    display: block
