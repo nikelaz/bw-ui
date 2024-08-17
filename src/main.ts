@@ -23,3 +23,4 @@ export type { onChangeEvent } from './components/data-grid/data-grid.types';
 export type { DropdownOption } from './components/dropdown/dropdown.types';
 export { Dropdown } from './components/dropdown/dropdown';
 export { MonthsSwitch } from './components/months-switch/months-switch';
+export { Scale } from './components/scale/scale';
