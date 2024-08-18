@@ -24,3 +24,4 @@ export type { DropdownOption } from './components/dropdown/dropdown.types';
 export { Dropdown } from './components/dropdown/dropdown';
 export { MonthsSwitch } from './components/months-switch/months-switch';
 export { Scale } from './components/scale/scale';
+export { Loader } from './components/loader/loader';
