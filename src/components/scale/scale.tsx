@@ -17,7 +17,7 @@ export const Scale = (props: ScaleProps) => (
     clsx(
       styles['scale'],
       props.progress > 100 && styles['scale--overflow'],
-      props.progress === 100 && styles['scale--balanced']
+      props.progress === 100 && styles['scale--balanced'],
     )
   }>
     <div className={styles['scale__topLabel']}>
