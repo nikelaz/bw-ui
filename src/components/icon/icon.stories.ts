@@ -86,3 +86,9 @@ export const XMark: Story = {
     type: IconTypes.XMark,
   },
 };
+
+export const Floppy: Story = {
+  args: {
+    type: IconTypes.Floppy,
+  },
+};
