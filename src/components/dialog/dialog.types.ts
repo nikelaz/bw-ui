@@ -1,7 +1,7 @@
 export type DialogProps = Readonly<{
   children?: React.ReactNode,
   isOpen?: boolean,
-  onKeyDown?: React.KeyboardEventHandler,
+  onKeyDown?: Function,
   onClose?: React.EventHandler<any>,
   title?: string,
   hasCloseBtn?: boolean

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { clsx } from 'clsx';
 import { DialogProps, DialogHookReturnType } from './dialog.types';
 import { IconTypes } from '../icon/icon';
@@ -9,8 +9,12 @@ import styles from './dialog.module.sass';
 export const useDialog = (initialIsOpenState = false): DialogHookReturnType => {
   const [isOpen, setIsOpen] = useState(initialIsOpenState); 
 
-  const onKeyDown = (event: React.KeyboardEvent) => {
+  const onKeyDown = (event: React.KeyboardEvent, onClose?: Function) => {
     if (isOpen && event.key === 'Escape') {
+      if (onClose) {
+        onClose();
+        return;
+      }
       setIsOpen(false);
     }
   };
@@ -31,20 +35,46 @@ export const Dialog = (props: DialogProps) => {
     dialogRef.current.close();
   }, [props.isOpen]);
 
+  useEffect(() => {
+    const documentClickHandler = (event: any) => {
+      if (
+        !dialogRef.current
+        || !event.target
+        || !props.onClose
+        || !event.target.contains(dialogRef.current)
+      ) return;
+
+      props.onClose(event);
+    };
+
+    document.addEventListener('click', documentClickHandler);
+
+    () => {
+      document.removeEventListener('click', documentClickHandler);
+    }
+  }, [dialogRef, props.onClose]);
+
+  const keyDownHandler = (event: React.KeyboardEvent<HTMLDialogElement>) => {
+    if (!props.onKeyDown) return;
+    props.onKeyDown(event, props.onClose);
+  };
+
   return (
     <dialog
       ref={dialogRef}
-      onKeyDown={props.onKeyDown}
+      onKeyDown={keyDownHandler}
       className={clsx(styles['dialog'])}
     >
-      <div className={styles['dialog__header']}>
-        <div className={styles['dialog__title']}>{props.title}</div>
-        {props.hasCloseBtn ? (
-          <Button icon={IconTypes.XMark} style="link" onClick={props.onClose} />
-        ): null}
-      </div>
-      <div>
-        {props.children}
+      <div className={styles['dialog__content']}>
+        <div className={styles['dialog__header']}>
+          <div className={styles['dialog__title']}>{props.title}</div>
+          {props.hasCloseBtn ? (
+            <Button icon={IconTypes.XMark} style="link" onClick={props.onClose} />
+          ): null}
+        </div>
+        <div>
+          {props.children}
+        </div>
       </div>
     </dialog>
   );

@@ -18,7 +18,7 @@ const meta = {
       <Dialog
         isOpen={isOpen}
         hasCloseBtn={args.hasCloseBtn}
-        onClose={() => setIsOpen(false)}
+        onClose={() => { setIsOpen(false); console.log('onClose'); }}
         onKeyDown={onKeyDown}
         title={args.title}
       >
