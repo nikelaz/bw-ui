@@ -12,6 +12,8 @@ import { WalletIcon } from '../../icons/wallet';
 import { XmarkIcon } from '../../icons/xmark';
 import { BinIcon } from '../../icons/bin';
 import { FloppyIcon } from '../../icons/floppy';
+import { LockIcon } from '../../icons/lock';
+import { LogoutIcon } from '../../icons/logout';
 
 export enum IconTypes {
   Plus = 1,
@@ -27,6 +29,8 @@ export enum IconTypes {
   XMark,
   Bin,
   Floppy,
+  Lock,
+  Logout
 };
 
 export const Icon = (props: IconProps) => {
@@ -62,5 +66,9 @@ export const Icon = (props: IconProps) => {
       return <BinIcon {...iconProps} />
     case IconTypes.Floppy:
       return <FloppyIcon {...iconProps} />
+    case IconTypes.Lock:
+      return <LockIcon {...iconProps} />
+    case IconTypes.Logout:
+      return <LogoutIcon {...iconProps} />
   }
 };
