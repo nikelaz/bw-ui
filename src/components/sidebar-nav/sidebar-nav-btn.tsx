@@ -1,5 +1,6 @@
 import styles from './sidebar-nav.module.sass';
 import clsx from 'clsx';
+import { Icon, IconTypes } from '../icon/icon';
 
 import { SidebarNavBtnProps } from './sidebar-nav.types';
 
@@ -23,7 +24,10 @@ export const SidebarNavBtn = (props: SidebarNavBtnProps) => {
         onClick={props.onClick}
         href={props.href}
       >
-        {props.children}
+        <Icon type={props.icon} width={27} height={24} fill="currentColor" />
+        <div className={styles['sidebar-nav__btn__label']}>
+          <div className={styles['sidebar-nav__btn__label__inner']}>{props.label}</div>
+        </div>
       </WrapComponent>
     );
   }
@@ -33,7 +37,10 @@ export const SidebarNavBtn = (props: SidebarNavBtnProps) => {
       {...sharedProps}
       onClick={props.onClick}
     >
-      {props.children}
+      <Icon type={props.icon} width={27} height={24} fill="currentColor" />
+      <div className={styles['sidebar-nav__btn__label']}>
+        <div className={styles['sidebar-nav__btn__label__inner']}>{props.label}</div>
+      </div>
     </button>
   );
 };

@@ -14,6 +14,7 @@ import { BinIcon } from '../../icons/bin';
 import { FloppyIcon } from '../../icons/floppy';
 import { LockIcon } from '../../icons/lock';
 import { LogoutIcon } from '../../icons/logout';
+import { CreditCardIcon } from '../../icons/credit-card';
 
 export enum IconTypes {
   Plus = 1,
@@ -30,7 +31,8 @@ export enum IconTypes {
   Bin,
   Floppy,
   Lock,
-  Logout
+  Logout,
+  CreditCard
 };
 
 export const Icon = (props: IconProps) => {
@@ -70,5 +72,7 @@ export const Icon = (props: IconProps) => {
       return <LockIcon {...iconProps} />
     case IconTypes.Logout:
       return <LogoutIcon {...iconProps} />
+    case IconTypes.CreditCard:
+      return <CreditCardIcon {...iconProps} />
   }
 };
