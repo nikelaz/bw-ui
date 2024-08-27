@@ -12,5 +12,5 @@ export type SidebarNavBtnProps = Readonly<{
   onClick?: React.MouseEventHandler<HTMLButtonElement>,
   component?: any,
   href?: string,
-  icon: any,
+  icon: IconTypes,
 }>;
