@@ -59,15 +59,21 @@ export const Default: Story = {
         label: 'Transactions',
         editable: true,
         fontWeight: 'bold',
+        desktopOnly: true,
         headerCellRenderer() {
           return (
-            <HeaderCell
-              fontSize='l'
-              textColor='dark'
-              key={this.field}
-            >
-              {this.label}
-            </HeaderCell>
+            <>
+              <HeaderCell
+                fontSize='l'
+                textColor='dark'
+                key={this.field}
+              >
+                {this.label}
+              </HeaderCell>
+              <HeaderCell mobile={true}>
+                <Button fontSize="1rem" style='link' icon={IconTypes.Plus}>New Transaction</Button>
+              </HeaderCell>
+            </>
           );
         }
       },
@@ -106,8 +112,8 @@ export const Default: Story = {
     },
     children: (
       <tfoot>
-        <Row>
-          <Cell>
+        <Row mobileGhost={true}>
+          <Cell desktop={true}>
             <Button style='link' icon={IconTypes.Plus}>New Transaction</Button>
           </Cell>
           <Cell textAlign='right' colSpan={3}>

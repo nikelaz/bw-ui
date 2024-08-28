@@ -69,12 +69,14 @@ export const DataGridCell = (props: DataGridCellProps) => {
       fontWeight={props.col.fontWeight}
       textAlign={props.col.textAlign}
       unitSuffix={props.col.unitSuffix}
+      header={props.skipMobileHeader ? undefined : props.col.label}
     >
       <input
         className={clsx(
           styles['dataGrid__cellInput'],
-          props.col.textAlign === 'right' && styles['dataGrid__cellInput--right'])
-        }
+          props.col.textAlign === 'right' && styles['dataGrid__cellInput--right'],
+          props.col.unitSuffix && styles['dataGrid__cellInput--unit']
+        )}
         readOnly={!props.col.editable}
         type={props.col.inputType || 'text'}
         value={cellValue}

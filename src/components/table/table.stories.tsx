@@ -30,6 +30,9 @@ export const Default: Story = {
             <HeaderCell textAlign='right'>Leftover debt</HeaderCell>
             <HeaderCell textAlign='right'>Planned</HeaderCell>
             <HeaderCell textAlign='right'>Paid</HeaderCell>
+            <HeaderCell mobile={true}>
+              <Button style='link' icon={IconTypes.Plus}>New Loan</Button>
+            </HeaderCell>
           </Row>
         </thead>
         <tbody>
@@ -38,37 +41,38 @@ export const Default: Story = {
               <span>Mortgage</span>
               <TableProgress value={35} />
             </Cell>
-            <Cell textAlign='right'>$115,000.00</Cell>
-            <Cell textAlign='right'>$1500.00</Cell>
-            <Cell textAlign='right'>$450.00</Cell>
+            <Cell textAlign='right' header="Leftover debt">$115,000.00</Cell>
+            <Cell textAlign='right' header="Planned">$1500.00</Cell>
+            <Cell textAlign='right' header="Paid">$450.00</Cell>
           </Row>
           <Row>
             <Cell fontSize='l' fontWeight='bold'>
               <span>Student Loan</span>
               <TableProgress value={60} />
             </Cell>
-            <Cell textAlign='right'>$50,000.00</Cell>
-            <Cell textAlign='right'>$1500.00</Cell>
-            <Cell textAlign='right'>$1100.00</Cell>
+            <Cell textAlign='right' header="Leftover debt">$50,000.00</Cell>
+            <Cell textAlign='right' header="Planned">$1500.00</Cell>
+            <Cell textAlign='right' header="Paid">$1100.00</Cell>
           </Row>
           <Row>
             <Cell fontSize='l' fontWeight='bold'>
               <span>Credit Card</span>
               <TableProgress value={25} />
             </Cell>
-            <Cell textAlign='right'>$2,000.00</Cell>
-            <Cell textAlign='right'>$150.00</Cell>
-            <Cell textAlign='right'>$150.00</Cell>
+            <Cell textAlign='right' header="Leftover debt">$2,000.00</Cell>
+            <Cell textAlign='right' header="Planned">$150.00</Cell>
+            <Cell textAlign='right' header="Paid">$150.00</Cell>
           </Row>
         </tbody>
         <tfoot>
           <Row>
-            <Cell>
+            <Cell desktop={true}>
               <Button style='link' icon={IconTypes.Plus}>New Loan</Button>
             </Cell>
-            <Cell textAlign='right' fontWeight='bold'>$140,000.00</Cell>
-            <Cell textAlign='right' fontWeight='bold'>$1470.00</Cell>
-            <Cell textAlign='right' fontWeight='bold'>$1000.00</Cell>
+            <Cell fontSize='l' fontWeight='bold' mobile={true}>Debt Totals</Cell>
+            <Cell textAlign='right' fontWeight='bold' header="Leftover Debt">$140,000.00</Cell>
+            <Cell textAlign='right' fontWeight='bold' header="Planned">$1470.00</Cell>
+            <Cell textAlign='right' fontWeight='bold' header="Actual">$1000.00</Cell>
           </Row>
         </tfoot>
       </>
@@ -86,37 +90,40 @@ export const WithPagination: Story = {
             <HeaderCell textAlign='right'>Date</HeaderCell>
             <HeaderCell textAlign='right'>Category</HeaderCell>
             <HeaderCell textAlign='right'>Amount</HeaderCell>
+            <HeaderCell mobile={true}>
+              <Button style='link' icon={IconTypes.Plus}>New Transaction</Button>
+            </HeaderCell>
           </Row>
         </thead>
         <tbody>
           <Row>
             <Cell fontSize='l' fontWeight='bold'>Phone Bill</Cell>
-            <Cell textAlign='right'>22/12/2013</Cell>
-            <Cell textAlign='right'>Utilities</Cell>
-            <Cell textAlign='right'>$56.40</Cell>
+            <Cell textAlign='right' header='Date'>22/12/2013</Cell>
+            <Cell textAlign='right' header='Category'>Utilities</Cell>
+            <Cell textAlign='right' header='Amount'>$56.40</Cell>
           </Row>
           <Row>
             <Cell fontSize='l' fontWeight='bold'>Phone Bill</Cell>
-            <Cell textAlign='right'>22/12/2013</Cell>
-            <Cell textAlign='right'>Utilities</Cell>
-            <Cell textAlign='right'>$56.40</Cell>
+            <Cell textAlign='right' header='Date'>22/12/2013</Cell>
+            <Cell textAlign='right' header='Category'>Utilities</Cell>
+            <Cell textAlign='right' header='Amount'>$56.40</Cell>
           </Row>
           <Row>
             <Cell fontSize='l' fontWeight='bold'>Phone Bill</Cell>
-            <Cell textAlign='right'>22/12/2013</Cell>
-            <Cell textAlign='right'>Utilities</Cell>
-            <Cell textAlign='right'>$56.40</Cell>
+            <Cell textAlign='right' header='Date'>22/12/2013</Cell>
+            <Cell textAlign='right' header='Category'>Utilities</Cell>
+            <Cell textAlign='right' header='Amount'>$56.40</Cell>
           </Row>
           <Row>
             <Cell fontSize='l' fontWeight='bold'>Phone Bill</Cell>
-            <Cell textAlign='right'>22/12/2013</Cell>
-            <Cell textAlign='right'>Utilities</Cell>
-            <Cell textAlign='right'>$56.40</Cell>
+            <Cell textAlign='right' header='Date'>22/12/2013</Cell>
+            <Cell textAlign='right' header='Category'>Utilities</Cell>
+            <Cell textAlign='right' header='Amount'>$56.40</Cell>
           </Row>
         </tbody>
         <tfoot>
-          <Row>
-            <Cell>
+          <Row mobileGhost={true}>
+            <Cell desktop={true}>
               <Button style='link' icon={IconTypes.Plus}>New Transaction</Button>
             </Cell>
             <Cell textAlign='right' colSpan={3}>

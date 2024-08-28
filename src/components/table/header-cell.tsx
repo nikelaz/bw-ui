@@ -10,6 +10,7 @@ export const HeaderCell = (props: HeaderCellProps) => (
       props.fontSize && styles[`table__headerCell--${props.fontSize}`],
       props.textColor && styles[`table__headerCell--${props.textColor}`],
       props.textAlign && styles[`table__headerCell--${props.textAlign}`],
+      props.mobile && styles['table__headerCell--mobile'],
     )}
     style={{
       width: props.width

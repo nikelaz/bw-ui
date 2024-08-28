@@ -87,3 +87,91 @@
 .table__cell_wrapper
   display: flex
   flex-wrap: nowrap
+  align-items: center
+
+.table__cell__mobileHeader
+  font-size: 1rem
+  font-weight: 600
+  color: var(--bw-ui-table-headerCell-color, #555)
+  flex-grow: 1
+  flex-basis: 50%
+  margin-right: 1rem
+  &::after
+    content: ':'
+
+.table__cell--mobile,
+.table__headerCell--mobile,
+.table__cell__mobileHeader
+  display: none
+
+@media (max-width: 640px)
+  .table__row
+    display: flex
+    flex-direction: column
+    gap: 0.35rem
+
+  .table__cell,
+  .table__headerCell,
+  .table__cell__mobileHeader,
+  .table__cell--mobile,
+  .table__headerCell--mobile
+    display: block
+
+  .table__headerCell:not(:first-of-type):not(.table__headerCell--mobile)
+    display: none
+  
+  .table__cell
+    border-bottom: none
+    text-align: left
+  
+  .table__cell,
+  .table__headerCell,
+  tfoot .table__cell
+    padding: 0.5rem 0.9rem !important
+  
+  .table__cell--right
+    justify-content: space-between
+  
+  .table
+    background-color: transparent
+    font-size: 1rem
+
+  tbody,
+  tfoot
+    .table__row
+      padding: 0.4rem 0 0.6rem
+      border-radius: 0.714rem
+      margin-bottom: 0.6rem
+      background-color: var(--bw-ui-table-bgColor, #F9F9F9)
+
+  .table__progress
+    bottom: 0
+    left: 0.928rem
+    right: 0.928rem
+    width: calc(100% - 1.856rem)
+    
+  .table__cell--desktop
+    display: none
+
+  thead .table__row
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    align-items: center
+  
+  .table__row--mobileGhost
+    background-color: transparent !important
+  
+  .table__headerCell--l
+    font-size: 1.2rem
+  
+  .table__cell--l
+    font-size: 1.1rem
+  
+  .table__cell__content
+    flex-grow: 1
+    flex-basis: 50%
+  
+  .table__cell__unit
+    position: absolute
+    right: 2em

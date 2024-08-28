@@ -14,6 +14,7 @@ export type ColDef = {
   inputType?: 'text' | 'number' | 'date',
   unitSuffix?: string,
   width?: string,
+  desktopOnly?: boolean
 }
 
 export type DataGridProps = Readonly<{
@@ -44,6 +45,7 @@ export type DataGridCellProps = Readonly<{
   row: any,
   onChange?: Function,
   progress?: number,
+  skipMobileHeader?: boolean,
 }>;
 
 export type CellChangeEvent = Readonly<{

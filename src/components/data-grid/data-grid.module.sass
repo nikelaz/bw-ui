@@ -69,3 +69,22 @@
     width: 0.5rem
     height: 100%
     transform: translateX(-100%)
+
+@media (max-width: 640px)
+  .dataGrid__deleteBtn
+    display: none
+  
+  .dataGrid__cellInput
+    width: 100%
+    text-align: left
+    &:not([readonly])
+      background-color: rgba(0, 0, 0, 0.05)
+
+  
+  .dataGrid__cellInput--unit
+    padding-right: 1.6rem
+  
+  .dataGrid__row:focus-within
+    background-color: var(--bw-ui-table-bgColor, #F9F9F9)
+    box-shadow: none
+

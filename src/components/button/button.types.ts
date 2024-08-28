@@ -11,4 +11,5 @@ export type ButtonProps = Readonly<{
   style?: 'link',
   autoFocus?: boolean,
   type?: 'button'
+  fontSize?: string
 }>;

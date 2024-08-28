@@ -1,5 +1,6 @@
 import { DataGridRowProps, CellChangeEvent, onChangeEvent } from './data-grid.types';
 import { Row } from '../table/row';
+import { Cell } from '../table/cell';
 import { Button } from '../button/button';
 import { IconTypes } from '../icon/icon';
 import { DataGridCell } from './data-grid-cell';
@@ -41,14 +42,22 @@ export const DataGridRow = (props: DataGridRowProps) => {
             col={col}
             onChange={onCellValueChange}
             progress={index === 0 ? progressValue : undefined}
+            skipMobileHeader={index === 0 && col.desktopOnly ? true : false}
             key={col.field}
           />
         );
       })}
       {props.deleteRows ? (
-        <td className={styles['dataGrid__deleteBtn']}>
-          <Button style="link" type="button" icon={IconTypes.Bin} onClick={deleteClickHandler} />
-        </td>
+        <>
+          <td className={styles['dataGrid__deleteBtn']}>
+            <Button style="link" type="button" icon={IconTypes.Bin} onClick={deleteClickHandler} />
+          </td>
+          <Cell mobile={true}>
+            <Button fontSize='1rem' style="link" type="button" icon={IconTypes.Bin} onClick={deleteClickHandler}>
+              Delete
+            </Button>
+          </Cell>
+        </>
       ) : null}
     </Row>
   );

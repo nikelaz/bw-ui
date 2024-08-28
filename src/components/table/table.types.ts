@@ -10,6 +10,7 @@ export type HeaderCellProps = Readonly<{
   textColor?: 'dark',
   textAlign?: 'right',
   width?: string,
+  mobile?: boolean,
 }>;
 
 export type CellProps = Readonly<{
@@ -21,11 +22,15 @@ export type CellProps = Readonly<{
   colSpan?: number,
   unitSuffix?: string,
   width?: string,
+  header?: string,
+  mobile?: boolean,
+  desktop?: boolean,
 }>;
 
 export type RowProps = Readonly<{
   children: React.ReactNode,
   className?: string,
+  mobileGhost?: boolean,
 }>;
 
 export type TableProgressProps = Readonly<{

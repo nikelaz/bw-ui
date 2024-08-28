@@ -13,6 +13,9 @@ export const Button = (props: ButtonProps) => (
       props.style && styles[`button--${props.style}`],
       props.iconPosition && styles[`button--iconRight`]
     )}
+    style={{
+      fontSize: props.fontSize
+    }}
     type={props.type}
     autoFocus={props.autoFocus}
   >
