@@ -127,3 +127,10 @@ export const Default: Story = {
     )
   }
 };
+
+export const Empty: Story = {
+  args: {
+    ...Default.args,
+    data: [],
+  }
+};

@@ -5,6 +5,7 @@ import { DataGridRow } from './data-grid-row';
 import { DataGridProps } from './data-grid.types';
 import { useState, useEffect } from 'react';
 import { flatten, unflatten } from 'flat';
+import { Cell } from '../table/cell';
 
 export const DataGrid = (props: DataGridProps) => {
   const flattenedData = props.data.map(node => flatten(node));
@@ -40,6 +41,9 @@ export const DataGrid = (props: DataGridProps) => {
         </Row>
       </thead>
       <tbody>
+        {data.length === 0 ? (
+          <Cell colSpan={props.cols.length}>There are currently no records to display.</Cell>
+        ): null}
         {data.map((row: any, index) => (
           <DataGridRow
             row={row}
