@@ -11,6 +11,7 @@ export type HeaderCellProps = Readonly<{
   textAlign?: 'right',
   width?: string,
   mobile?: boolean,
+  desktop?: boolean,
 }>;
 
 export type CellProps = Readonly<{

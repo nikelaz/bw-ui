@@ -11,6 +11,7 @@ export const HeaderCell = (props: HeaderCellProps) => (
       props.textColor && styles[`table__headerCell--${props.textColor}`],
       props.textAlign && styles[`table__headerCell--${props.textAlign}`],
       props.mobile && styles['table__headerCell--mobile'],
+      props.desktop && styles['table__headerCell--desktop'],
     )}
     style={{
       width: props.width
