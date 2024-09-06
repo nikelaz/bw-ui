@@ -4,7 +4,7 @@ import { DataGridCellProps, CellChangeEvent } from './data-grid.types';
 import { Cell } from '../table/cell';
 import { TableProgress } from '../table/table-progress';
 import DateUtilities from './date-utilities';
-import { getFormattedDecimal } from '../../helpers/formatting-utils';}
+import { getFormattedDecimal } from '../../helpers/formatting-utils';
 
 import styles from './data-grid.module.sass';
 
