@@ -1,5 +1,6 @@
 import { clsx } from 'clsx';
 import styles from './scale.module.sass';
+import { getFormattedDecimal } from '../../helpers/formatting-utils';
 
 type ScaleProps = Readonly<{
   unit: string,
@@ -23,14 +24,14 @@ export const Scale = (props: ScaleProps) => (
     <div className={styles['scale__topLabel']}>
       <div className={styles['scale__textNode']}>
         <div className={styles['scale__textNode__value']}>
-          {props.topValue}{props.unit}
+          {getFormattedDecimal(props.topValue)}{props.unit}
         </div>
         <div className={styles['scale__textNode__label']}>
           {props.topLabel}
         </div>
       </div>
     </div>
-    
+
     <div className={styles['scale__progress__wrap']}>
       <div
         className={styles['scale__progress']}
@@ -58,7 +59,7 @@ export const Scale = (props: ScaleProps) => (
               )
             }>
               <div className={styles['scale__textNode__value']}>
-                {props.leftValue}{props.unit}
+                {getFormattedDecimal(props.leftValue)}{props.unit}
               </div>
               <div className={styles['scale__textNode__label']}>
                 {props.leftLabel}
@@ -78,7 +79,7 @@ export const Scale = (props: ScaleProps) => (
               )
             }>
               <div className={styles['scale__textNode__value']}>
-                {props.rightValue}{props.unit}
+                {getFormattedDecimal(props.rightValue)}{props.unit}
               </div>
               <div className={styles['scale__textNode__label']}>
                 {props.rightLabel}

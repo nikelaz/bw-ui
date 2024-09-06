@@ -4,6 +4,7 @@ import { DataGridCellProps, CellChangeEvent } from './data-grid.types';
 import { Cell } from '../table/cell';
 import { TableProgress } from '../table/table-progress';
 import DateUtilities from './date-utilities';
+import { getFormattedDecimal } from '../../helpers/formatting-utils';}
 
 import styles from './data-grid.module.sass';
 
@@ -15,6 +16,10 @@ const formatCellValue = (input: any, inputType?: string) => {
 
   if (inputType === 'date') {
     return DateUtilities.toISOString(input);
+  }
+
+  if (inputType === 'number') {
+    return getFormattedDecimal(input);
   }
 
   return input;
@@ -48,14 +53,14 @@ export const DataGridCell = (props: DataGridCellProps) => {
     if (cellValue === cachedValue) return;
 
     setCachedValue(cellValue);
-    
+
     if (typeof props.onChange !== 'function') return;
-    
+
     const changeEvent: CellChangeEvent = {
       key: props.col.field,
       value: cellValue
     };
-    
+
     props.onChange(changeEvent);
   }
 
