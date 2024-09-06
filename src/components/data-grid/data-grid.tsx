@@ -25,7 +25,7 @@ export const DataGrid = (props: DataGridProps) => {
   }, [props.data]);
 
   return (
-    <Table>
+    <Table className={props.className}>
       <thead>
         <Row>
           {props.cols.map((col) => {

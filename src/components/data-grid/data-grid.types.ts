@@ -27,6 +27,7 @@ export type DataGridProps = Readonly<{
   progressField?: string,
   tfootRenderer?: Function,
   progressComputeFunction?: Function,
+  className?: string,
 }>;
 
 export type DataGridRowProps = Readonly<{
