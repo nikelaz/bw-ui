@@ -42,7 +42,9 @@ export const DataGrid = (props: DataGridProps) => {
       </thead>
       <tbody>
         {data.length === 0 ? (
-          <Cell colSpan={props.cols.length}>There are currently no records to display.</Cell>
+          <Row>
+            <Cell colSpan={props.cols.length}>There are currently no records to display.</Cell>
+          </Row>
         ): null}
         {data.map((row: any, index) => (
           <DataGridRow
