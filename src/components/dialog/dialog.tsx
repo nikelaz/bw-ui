@@ -7,7 +7,7 @@ import { Button } from '../button/button';
 import styles from './dialog.module.sass';
 
 export const useDialog = (initialIsOpenState = false): DialogHookReturnType => {
-  const [isOpen, setIsOpen] = useState(initialIsOpenState); 
+  const [isOpen, setIsOpen] = useState(initialIsOpenState);
 
   const onKeyDown = (event: React.KeyboardEvent, onClose?: Function) => {
     if (isOpen && event.key === 'Escape') {
@@ -29,10 +29,12 @@ export const Dialog = (props: DialogProps) => {
     if (!dialogRef.current) return;
     if (props.isOpen) {
       dialogRef.current.showModal();
+      document.body.style.overflow = 'hidden';
       return;
     }
 
     dialogRef.current.close();
+    document.body.style.overflow = 'auto';
   }, [props.isOpen]);
 
   useEffect(() => {
