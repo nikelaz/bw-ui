@@ -3,7 +3,7 @@
   display: flex
   align-items: center
   justify-content: center
-  
+
   &--is-open
     .dropdown__panel
       display: flex
@@ -26,7 +26,7 @@
   min-width: 14.2rem
   margin-top: 1rem
   padding: 0.572rem 1.429rem
-  background-color: #fff
+  background-color: var(--bw-ui-dropdown-bgColor, #fff)
   border-radius: 0.714rem
   box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.15)
 
@@ -41,22 +41,22 @@
   font-size: 1.143rem
   background: none
   font-weight: 600
-  color: #007bff
+  color: var(--bw-ui-dropdown-color, #007bff)
   cursor: pointer
     padding-top: 0.857rem
-  
+
   &:not(:last-of-type)
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
-  
+    border-bottom: 1px solid var(--bw-ui-dropdown-borderColor, rgba(0, 0, 0, 0.2))
+
   &:hover
-    color: #0061ca
-  
+    color: var(--bw-ui-dropdown-hoverColor, #0061ca)
+
   &:focus
-    outline: 2px solid rgba(0, 97, 202, 0.5)
-  
+    outline: 2px solid var(--bw-ui-dropdown-outlineColor, rgba(0, 97, 202, 0.5))
+
   &:active
-    color: #007bff
-  
+    color: var(--bw-ui-dropdown-color, #007bff)
+
   &--is-active
-    color: #000
+    color: var(--bw-ui-dropdown-activeColor, #000)
     pointer-events: none

@@ -45,7 +45,7 @@
 .scale__progress__bar
   display: block
   position: relative
-  background-color: #ff9500
+  background-color: var(--bw-ui-scale-progressColor, #FF9500)
   height: 0.714rem
   border-radius: 1em
   min-width: 1rem
@@ -57,7 +57,7 @@
   flex-grow: 1
   height: 0.714rem
   appearance: none
-  background-color: #34C759
+  background-color: var(--bw-ui-scale-balanceColor, #34C759)
   border-radius: 1rem
   min-width: 1rem
 
@@ -84,10 +84,10 @@
     display: none
 
   .scale__progress__bar
-    background-color: #FF3A30
+    background-color: var(--bw-ui-scale-overflowColor, #FF3A30)
 
   .scale__textNode--progress
-    color: #FF3A30
+    color: var(--bw-ui-scale-overflowColor, #FF3A30)
 
   .scale__progress
     display: block

@@ -12,30 +12,30 @@
   border-radius: 3px
 
   &:not([readonly]):hover
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: var(--bw-ui-table-cellHoverBgColor, rgba(0, 0, 0, 0.05))
 
   &:focus
-    background-color: #fff !important
+    background-color: var(--bw-ui-table-cellFocusBgColor, #fff) !important
     outline-color: var(--bw-ui-table-cellFocusOutline, #007BFF)
     outline-style: solid
     outline-width: 2px
-  
+
   &::-webkit-inner-spin-button,
   &::-webkit-calendar-picker-indicator
     display: none
     -webkit-appearance: none
-  
+
   &:read-only:focus
     outline: none
 
 .dataGrid__row
   position: relative
- 
+
 .dataGrid__cellInput--right
   text-align: right
 
 .dataGrid__row:focus-within
-  background-color: #fff
+  background-color: var(--bw-ui-table-cellFocusBgColor, #fff)
   box-shadow: 0.142rem 0.214rem 0.714rem rgba(0, 0, 0, 0.1)
 
   .dataGrid__deleteBtn
@@ -50,7 +50,7 @@
   top: 50%
   margin-top: -1px
   transform: translate(100%, -50%)
-  background-color: #fff
+  background-color: var(--bw-ui-table-cellFocusBgColor, #fff)
   height: calc(100% - 2px)
   display: flex
   align-items: center
@@ -73,18 +73,17 @@
 @media (max-width: 640px)
   .dataGrid__deleteBtn
     display: none
-  
+
   .dataGrid__cellInput
     width: 100%
     text-align: left
     &:not([readonly])
-      background-color: rgba(0, 0, 0, 0.05)
+      background-color: var(--bw-ui-table-cellHoverBgColor, rgba(0, 0, 0, 0.05))
 
-  
+
   .dataGrid__cellInput--unit
     padding-right: 1.6rem
-  
+
   .dataGrid__row:focus-within
     background-color: var(--bw-ui-table-bgColor, #F9F9F9)
     box-shadow: none
-
