@@ -23,29 +23,30 @@
 
   &:focus
     outline: 3px solid var(--bw-ui-button-focusOutlineColor, rgba(0, 97, 202, 0.3))
-  
+
   &--link
     background-color: transparent
     color: var(--bw-ui-button-bgColor, #007BFF)
     border-radius: 0
     gap: 5px
-  
+    overflow: visible
+
     .button__content,
     .button__icon
       background-color: transparent
       padding: 0
-    
+
     .button__icon
       svg
         width: 0.75em
-        height: 0.75em     
+        height: 0.75em
 
     &:hover,
     &:focus
       background-color: transparent
       color: var(--bw-ui-button-bgHoverColor, #0061ca)
       outline: none
-    
+
     &:active
       background-color: transparent
       color: var(--bw-ui-button-bgColor, #007BFF)
@@ -73,7 +74,7 @@ svg
 .button--iconRight
   .button__icon
     order: 1
-  
+
 @media (max-width: 640px)
   .button__content,
   .button__icon

@@ -18,10 +18,10 @@ export const Default: Story = {
     topValue: 1,
     topLabel: 'Planned',
     unit: '$',
-    progress: 2,
-    leftValue: 1,
+    progress: 50,
+    leftValue: 6000,
     leftLabel: 'Actual',
-    rightValue: 6000,
+    rightValue: 1,
     rightLabel: 'Current Cash'
   }
 };
