@@ -5,10 +5,14 @@ import { Cell } from '../table/cell';
 import { TableProgress } from '../table/table-progress';
 import DateUtilities from './date-utilities';
 import { getFormattedDecimal } from '../../helpers/formatting-utils';
-
+import dayjs from 'dayjs';
+import formatParser from 'dayjs/plugin/customParseFormat';
+import isNumeric from 'isnumeric';
 import styles from './data-grid.module.sass';
 
+dayjs.extend(formatParser);
 
+// eslint-disable-next-line
 const formatCellValue = (input: any, inputType?: string) => {
   if (input === null) {
     return '';
@@ -19,22 +23,23 @@ const formatCellValue = (input: any, inputType?: string) => {
   }
 
   if (inputType === 'number') {
-    return getFormattedDecimal(input);
+    return getFormattedDecimal(parseFloat(input));
   }
 
   return input;
 }
 
 export const DataGridCell = (props: DataGridCellProps) => {
-  let initialValue = formatCellValue(props.row[props.col.field], props.col.inputType);
+  const inputType = props.col.inputType;
+  const initialValue = formatCellValue(props.row[props.col.field], props.col.inputType);
   const [cachedValue, setCachedValue] = useState(initialValue);
   const [cellValue, setCellValue] = useState(initialValue);
   const inputRef: React.MutableRefObject<HTMLInputElement | null> = useRef(null);
 
   useEffect(() => {
-    let newValue = formatCellValue(props.row[props.col.field], props.col.inputType);
+    const newValue = formatCellValue(props.row[props.col.field], props.col.inputType);
     setCellValue(newValue);
-  }, [setCellValue, props.row]);
+  }, [setCellValue, props.row, props.col.field, props.col.inputType]);
 
   useEffect(() => {
     const keydownHandler = (event: KeyboardEvent) => {
@@ -49,8 +54,27 @@ export const DataGridCell = (props: DataGridCellProps) => {
     };
   });
 
+  const isCellValueValid = (value: string, inputType?: 'text' | 'number' | 'date') => {
+    switch (inputType) {
+      case 'number':
+        if (!isNumeric(value)) return false;
+        break;
+      case 'date':
+        if (!dayjs(value).isValid()) return false;
+        break;
+    }
+
+    return true;
+  }
+
   const blurHandler = () => {
     if (cellValue === cachedValue) return;
+
+    // data validation
+    if (!isCellValueValid(cellValue, inputType)) {
+      setCellValue(cachedValue);
+      return;
+    }
 
     setCachedValue(cellValue);
 
