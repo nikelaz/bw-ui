@@ -44,46 +44,46 @@ export const Scale = (props: ScaleProps) => (
           value={props.progress}
           className={styles['scale__a11y']}
         />
-        <div
-          style={{
-            width: `calc(${props.progress}% - 0.179rem`
-          }}
-          className={styles['scale__progress__bar']}
-        >
-          <div className={styles['scale__progress__stripes']} style={{ width: `calc(${(100 - ((100 / props.progress) * 100)).toFixed(2)}% - 0.285rem)` }}></div>
-          <div className={styles['scale__progress__bar__label']}>
-            <div className={
-              clsx(
-                styles['scale__textNode'],
-                styles['scale__textNode--progress']
-              )
-            }>
-              <div className={styles['scale__textNode__value']}>
-                {getFormattedDecimal(props.leftValue)}{props.unit}
-              </div>
-              <div className={styles['scale__textNode__label']}>
-                {props.leftLabel}
-              </div>
+      </div>
+      <div
+        style={{
+          width: `calc(${props.progress}% - 0.179rem`
+        }}
+        className={styles['scale__progress__bar']}
+      >
+        <div className={styles['scale__progress__stripes']} style={{ width: `calc(${(100 - ((100 / props.progress) * 100)).toFixed(2)}% - 0.285rem)` }}></div>
+        <div className={styles['scale__progress__bar__label']}>
+          <div className={
+            clsx(
+              styles['scale__textNode'],
+              styles['scale__textNode--progress']
+            )
+          }>
+            <div className={styles['scale__textNode__value']}>
+              {getFormattedDecimal(props.leftValue)}{props.unit}
+            </div>
+            <div className={styles['scale__textNode__label']}>
+              {props.leftLabel}
             </div>
           </div>
         </div>
+      </div>
 
-        <div
-          className={styles['scale__progress__balance']}
-        >
-          <div className={styles['scale__progress__bar__label']}>
-            <div className={
-              clsx(
-                styles['scale__textNode'],
-                styles['scale__textNode--balance']
-              )
-            }>
-              <div className={styles['scale__textNode__value']}>
-                {getFormattedDecimal(props.rightValue)}{props.unit}
-              </div>
-              <div className={styles['scale__textNode__label']}>
-                {props.rightLabel}
-              </div>
+      <div
+        className={styles['scale__progress__balance']}
+      >
+        <div className={styles['scale__progress__bar__label']}>
+          <div className={
+            clsx(
+              styles['scale__textNode'],
+              styles['scale__textNode--balance']
+            )
+          }>
+            <div className={styles['scale__textNode__value']}>
+              {getFormattedDecimal(props.rightValue)}{props.unit}
+            </div>
+            <div className={styles['scale__textNode__label']}>
+              {props.rightLabel}
             </div>
           </div>
         </div>

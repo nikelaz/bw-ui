@@ -15,13 +15,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    topValue: 5000,
+    topValue: 1,
     topLabel: 'Planned',
     unit: '$',
-    progress: 3000/5000 * 100,
-    leftValue: 3000,
+    progress: 2,
+    leftValue: 1,
     leftLabel: 'Actual',
-    rightValue: 2000,
+    rightValue: 6000,
     rightLabel: 'Current Cash'
   }
 };
@@ -38,4 +38,3 @@ export const Overflow: Story = {
     rightLabel: 'Current Cash'
   }
 };
-

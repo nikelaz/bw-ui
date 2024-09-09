@@ -25,17 +25,22 @@
   text-transform: uppercase
 
 .scale__progress__wrap
+  width: 100%
   min-width: 15rem
   padding-bottom: 2.8rem
-
-.scale__progress
   position: relative
   display: flex
-  border: 1px dashed var(--bw-ui-scale-neutralColor, #555)
-  border-radius: 1rem
   padding: 0.285rem
   gap: 0.357rem
   height: auto
+
+.scale__progress
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  border: 1px dashed var(--bw-ui-scale-neutralColor, #555)
+  border-radius: 1rem
 
 .scale__progress__bar
   display: block
@@ -77,16 +82,16 @@
 .scale--overflow
   .scale__progress__balance
     display: none
-  
+
   .scale__progress__bar
     background-color: #FF3A30
-  
+
   .scale__textNode--progress
     color: #FF3A30
-  
+
   .scale__progress
     display: block
-  
+
   .scale__progress__stripes
     position: absolute
     top: 0
