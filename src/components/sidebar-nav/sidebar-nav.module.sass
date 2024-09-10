@@ -58,7 +58,7 @@
       opacity: 1
       transition: .3s transform, .3s opacity, .3s outline-color
       @media (min-width: 768px)
-        outline: 1px solid hsl(0, 0%, 80%)
+        outline: 1px solid var(--bw-ui-sidebar-nav-outlineColor, hsl(0, 0%, 80%))
     .sidebar-nav__btn__label__inner
       opacity: 1
       transition: .2s .25s opacity
@@ -70,7 +70,7 @@
       pointer-events: none
 
       background-color: var(--bw-ui-sidebar-nav-button-activeColor, #ccc)
-      outline: 1px solid hsl(0, 0%, 80%)
+      outline: 1px solid var(--bw-ui-sidebar-nav-outlineColor, hsl(0, 0%, 80%))
 
       &:hover
         color: #000

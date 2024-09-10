@@ -13,7 +13,7 @@ export const Input = (props: InputProps) => {
   return (
     <div className={styles['input__wrapper']}>
       <input {...props} className={className} />
-      {props.type === 'search' ? <Icon type={IconTypes.Search} width={14} height={14} /> : null}
+      {props.type === 'search' ? <Icon type={IconTypes.Search} width={14} height={14} fill="currentColor" /> : null}
     </div>
   );
 };
