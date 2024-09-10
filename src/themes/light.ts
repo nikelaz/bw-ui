@@ -1,1 +1,1 @@
-import './light-high-contrast.sass';
+import './dark.sass';
