@@ -54,7 +54,7 @@
     .sidebar-nav__btn__label
       transform: scaleX(1)
       opacity: 1
-      transition: .3s transform, .3s opacity
+      transition: .3s transform, .3s opacity, .3s outline-color
       outline: 1px solid hsl(0, 0%, 80%)
     .sidebar-nav__btn__label__inner
       opacity: 1
@@ -92,11 +92,12 @@
     opacity: 0
     transform: scaleX(0)
     transform-origin: left
-    transition: .3s .05s transform, .3s .05s opacity
+    transition: .3s .05s transform, .3s .05s opacity, .3s .05s outline-color
     padding: 0 1.5em 0 100%
     border-radius: 0.714em
     height: 100%
     background-color: var(--bw-ui-sidebar-nav-button-activeColor, #ccc)
+    outline: 1px solid transparent
 
 .sidebar-nav__btn__label__inner
   font-weight: 600
