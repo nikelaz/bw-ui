@@ -55,17 +55,18 @@
       transform: scaleX(1)
       opacity: 1
       transition: .3s transform, .3s opacity, .3s outline-color
-      outline: 1px solid hsl(0, 0%, 80%)
+      @media (min-width: 768px)
+        outline: 1px solid hsl(0, 0%, 80%)
     .sidebar-nav__btn__label__inner
       opacity: 1
       transition: .2s .25s opacity
 
   &--is-active
     cursor: default
-    color: var(--bw-ui-sidebar-nav-button-hoverColor, #0061ca)
+    color: var(--bw-ui-sidebar-nav-button-activeColorMobile, #0061ca)
     @media (min-width: 768px)
       pointer-events: none
-      color: #000
+      color: var(--bw-ui-sidebar-nav-button-hoverColor, #000)
       background-color: var(--bw-ui-sidebar-nav-button-activeColor, #ccc)
       outline: 1px solid hsl(0, 0%, 80%)
 
