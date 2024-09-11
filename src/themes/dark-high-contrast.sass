@@ -1,19 +1,19 @@
 $white: #fff
 $black: #000
-$primary: #409cff
-$primary-hover: #4da3ff
+$primary-foreground: #409cff
+$primary-foreground-hover: #4da3ff
+$primary-background: #0a84ff
+$primary-background-hover: #1a8cff
 $secondary: #30db5b
 $red: #ff6961
 
 .theme\:dark-high-contrast
-  --bw-ui-button-bgColor: #{$primary}
+  --bw-ui-button-bgColor: #{$primary-background}
+  --bw-ui-button-bgHoverColor: #{$primary-background-hover}
   --bw-ui-button-color: #{$white}
-  --bw-ui-button-bgHoverColor: #{$primary-hover}
-  --bw-ui-button-bgColor: #{$primary}
   --bw-ui-button-focusOutlineColor: rgba(26, 140, 255, 0.3)
-  --bw-ui-button-bgColor: #{$primary}
-  --bw-ui-button-bgHoverColor: #{$primary-hover}
-  --bw-ui-button-bgColor: #{$primary}
+  --bw-ui-button-linkColor: #{$primary-foreground}
+  --bw-ui-button-linkHoverColor: ${$primary-foreground-hover}
 
   --bw-ui-table-bgColor: hsl(0, 0%, 22%)
   --bw-ui-table-headerCell-color: hsl(0, 0%, 70%)
@@ -21,7 +21,7 @@ $red: #ff6961
   --bw-ui-table-borderColor: hsl(0, 0%, 25%)
   --bw-ui-table-cellHoverBgColor: rgba(255, 255, 255, 0.05)
   --bw-ui-table-cellFocusBgColor: hsl(0, 0%, 9%)
-  --bw-ui-table-cellFocusOutline: #{$primary}
+  --bw-ui-table-cellFocusOutline: #{$primary-foreground}
   --bw-ui-table-progress-foregroundColor: #{$secondary}
   --bw-ui-table-progress-overflowColor: #{$red}
 
@@ -29,8 +29,8 @@ $red: #ff6961
   --bw-ui-dialog-backdrop: #{$black}
 
   --bw-ui-dropdown-bgColor: hsl(0, 0%, 22%)
-  --bw-ui-dropdown-color: #{$primary}
-  --bw-ui-dropdown-hoverColor: #{$primary-hover}
+  --bw-ui-dropdown-color: #{$primary-foreground}
+  --bw-ui-dropdown-hoverColor: #{$primary-foreground-hover}
   --bw-ui-dropdown-activeColor: #{$white}
   --bw-ui-dropdown-outlineColor: rgba(26, 140, 255, 0.3)
   --bw-ui-dropdown-borderColor: hsl(0, 0%, 25%)
@@ -41,12 +41,11 @@ $red: #ff6961
   --bw-ui-input-phColor: hsl(0, 0%, 70%)
   --bw-ui-input-iconColor: hsl(0, 0%, 20%)
   --bw-ui-input-focusBorder: hsl(0, 0%, 24%)
-  --bw-ui-checkbox-accent: #{$primary}
+  --bw-ui-checkbox-accent: #{$primary-background}
 
-  --bw-ui-monthsSwitch-color: #{$primary}
+  --bw-ui-monthsSwitch-color: #{$primary-foreground}
   --bw-ui-monthsSwitch-iconColor: hsl(0, 0%, 70%)
-  --bw-ui-monthsSwitch-hoverColor: #{$primary}
-  --bw-ui-monthsSwitch-color: #{$primary}
+  --bw-ui-monthsSwitch-hoverColor: #{$primary-foreground-hover}
   --bw-ui-monthsSwitch-outlineColor: rgba(26, 140, 255, 0.3)
 
   --bw-ui-scale-neutralColor: #fff
@@ -58,6 +57,6 @@ $red: #ff6961
   --bw-ui-sidebar-nav-button-hoverColor: #{$white}
   --bw-ui-sidebar-nav-button-activeBgColor: hsl(0, 0%, 22%)
   --bw-ui-sidebar-nav-button-activeColor: #{$white}
-  --bw-ui-sidebar-nav-button-activeColorMobile: #{$primary}
+  --bw-ui-sidebar-nav-button-activeColorMobile: #{$primary-foreground}
   --bw-ui-sidebar-nav-outlineColor: hsl(0, 0%, 32%)
   --bw-ui-sidebar-nav-logoColor: hsl(0, 0%, 50%)
