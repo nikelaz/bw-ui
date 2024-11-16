@@ -36,7 +36,7 @@ export const Scale = (props: ScaleProps) => (
       <div
         className={styles['scale__progress']}
         style={{
-          width: props.progress > 100 ? `calc(${((100 / props.progress) * 100).toFixed(2)}% + 0.57rem)` : '100%'
+          width: props.progress > 100 ? `calc(${(100 / props.progress).toFixed(2)} * calc(100% - 0.57rem))` : '100%'
         }}
       >
         <progress
@@ -47,11 +47,11 @@ export const Scale = (props: ScaleProps) => (
       </div>
       <div
         style={{
-          width: `calc(${props.progress}% - 0.179rem`
+          width: props.progress < 100 ? `calc(${props.progress}% - 0.179rem` : `${Math.min(props.progress, 100)}%`
         }}
         className={styles['scale__progress__bar']}
       >
-        <div className={styles['scale__progress__stripes']} style={{ width: `calc(${(100 - ((100 / props.progress) * 100)).toFixed(2)}% - 0.285rem)` }}></div>
+        <div className={styles['scale__progress__stripes']} style={{ width: `calc(${(100 - ((100 / props.progress) * 100)).toFixed(2)}% + 0.285rem)` }}></div>
         <div className={styles['scale__progress__bar__label']}>
           <div className={
             clsx(
