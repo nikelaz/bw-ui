@@ -96,8 +96,9 @@ export const Default: Story = {
         inputType: 'number',
         textAlign: 'right',
         unitSuffix: '$',
-        editable: true,
+        editable: false,
         width: '5rem',
+        onClick: () => { alert('click') }
       },
     ],
     progressComputeFunction: (row: any) => {

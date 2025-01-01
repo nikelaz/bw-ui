@@ -1,3 +1,5 @@
+import { MouseEventHandler } from "react";
+
 export type onChangeEvent = Readonly<{
   rowData: any,
   index: number,
@@ -14,7 +16,8 @@ export type ColDef = {
   inputType?: 'text' | 'number' | 'date',
   unitSuffix?: string,
   width?: string,
-  desktopOnly?: boolean
+  desktopOnly?: boolean,
+  onClick?: MouseEventHandler<HTMLInputElement>,
 }
 
 export type DataGridProps = Readonly<{
@@ -47,6 +50,7 @@ export type DataGridCellProps = Readonly<{
   onChange?: Function,
   progress?: number,
   skipMobileHeader?: boolean,
+  onClick?: MouseEventHandler<HTMLInputElement>,
 }>;
 
 export type CellChangeEvent = Readonly<{

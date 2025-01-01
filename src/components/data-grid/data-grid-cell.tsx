@@ -104,11 +104,14 @@ export const DataGridCell = (props: DataGridCellProps) => {
         className={clsx(
           styles['dataGrid__cellInput'],
           props.col.textAlign === 'right' && styles['dataGrid__cellInput--right'],
-          props.col.unitSuffix && styles['dataGrid__cellInput--unit']
+          props.col.unitSuffix && styles['dataGrid__cellInput--unit'],
+          (!props.col.editable && !props.onClick) && styles['dataGrid__cellInput--noHover'],
+          props.onClick && styles['dataGrid__cellInput--pointer']
         )}
         readOnly={!props.col.editable}
         type={props.col.inputType || 'text'}
         value={cellValue}
+        onClick={props.onClick}
         onChange={(e) => setCellValue(e.target.value)}
         onBlur={blurHandler}
         ref={inputRef}

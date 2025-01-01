@@ -44,6 +44,7 @@ export const DataGridRow = (props: DataGridRowProps) => {
             progress={index === 0 ? progressValue : undefined}
             skipMobileHeader={index === 0 && col.desktopOnly ? true : false}
             key={col.field}
+            onClick={col.onClick}
           />
         );
       })}

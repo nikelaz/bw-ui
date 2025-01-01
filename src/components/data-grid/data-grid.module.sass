@@ -11,8 +11,11 @@
   font: inherit
   border-radius: 3px
 
-  &:not([readonly]):hover
+  &:not(.dataGrid__cellInput--noHover):hover
     background-color: var(--bw-ui-table-cellHoverBgColor, rgba(0, 0, 0, 0.05))
+  
+  &.dataGrid__cellInput--pointer
+    cursor: pointer
 
   &:focus
     background-color: var(--bw-ui-table-cellFocusBgColor, #fff) !important
