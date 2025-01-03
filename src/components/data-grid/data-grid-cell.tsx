@@ -111,7 +111,7 @@ export const DataGridCell = (props: DataGridCellProps) => {
         readOnly={!props.col.editable}
         type={props.col.inputType || 'text'}
         value={cellValue}
-        onClick={() => { props.onClick && props.onClick(props.row) }
+        onClick={() => { props.onClick && props.onClick(props.row) }}
         onChange={(e) => setCellValue(e.target.value)}
         onBlur={blurHandler}
         ref={inputRef}
