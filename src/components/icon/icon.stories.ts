@@ -92,3 +92,21 @@ export const Floppy: Story = {
     type: IconTypes.Floppy,
   },
 };
+
+export const Apple: Story = {
+  args: {
+    type: IconTypes.Apple,
+  },
+};
+
+export const Google: Story = {
+  args: {
+    type: IconTypes.Google,
+  },
+};
+
+export const Mail: Story = {
+  args: {
+    type: IconTypes.Mail,
+  },
+};

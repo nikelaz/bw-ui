@@ -15,6 +15,9 @@ import { FloppyIcon } from '../../icons/floppy';
 import { LockIcon } from '../../icons/lock';
 import { LogoutIcon } from '../../icons/logout';
 import { CreditCardIcon } from '../../icons/credit-card';
+import { AppleIcon } from '../../icons/apple';
+import { GoogleIcon } from '../../icons/google';
+import { MailIcon } from '../../icons/mail';
 
 export enum IconTypes {
   Plus = 1,
@@ -32,7 +35,10 @@ export enum IconTypes {
   Floppy,
   Lock,
   Logout,
-  CreditCard
+  CreditCard,
+  Apple,
+  Google,
+  Mail,
 };
 
 export const Icon = (props: IconProps) => {
@@ -74,5 +80,11 @@ export const Icon = (props: IconProps) => {
       return <LogoutIcon {...iconProps} />
     case IconTypes.CreditCard:
       return <CreditCardIcon {...iconProps} />
+    case IconTypes.Apple:
+      return <AppleIcon {...iconProps} />
+    case IconTypes.Google:
+      return <GoogleIcon {...iconProps} />
+    case IconTypes.Mail:
+      return <MailIcon {...iconProps} />
   }
 };
