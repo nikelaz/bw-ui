@@ -35,6 +35,13 @@ export const IconButtonRight: Story = {
   },
 };
 
+export const Secondary: Story = {
+  args: {
+    children: 'Secondary Button',
+    style: 'secondary'
+  }
+};
+
 export const Link: Story = {
   args: {
     children: 'Link Button',

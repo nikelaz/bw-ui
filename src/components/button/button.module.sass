@@ -10,7 +10,7 @@
   color: var(--bw-ui-button-color, #fff)
   font-size: var(--bw-ui-button-fontSize, 1rem)
   font-weight: var(--bw-ui-button-fontWeight, 700)
-  border-radius: var(--bw-ui-button-radius, 0.714rem)
+  border-radius: var(--bw-ui-button-radius, 1.142rem)
   transition: .2s background-color, .2s box-shadow
   cursor: pointer
   overflow: hidden
@@ -24,17 +24,25 @@
   &:focus
     outline: 3px solid var(--bw-ui-button-focusOutlineColor, rgba(0, 97, 202, 0.3))
 
+  &--secondary
+    background-color: var(--bw-ui-button-secondary-bgColor, hsl(0, 0%, 84%)) 
+    color: var(--bw-ui-button-secondary-color, #000)
+    &:hover
+      background-color: var(--bw-ui-button-secondary-bgHoverColor, hsl(0, 0%, 77%))
+    &:active
+      background-color: var(--bw-ui-button-secondary-bgColor, hsl(0, 0%, 84%))
+
   &--link
     background-color: transparent
     color: var(--bw-ui-button-linkColor, #007BFF)
     border-radius: 0
-    gap: 5px
+    gap: 0.5rem
     overflow: visible
 
     .button__content,
     .button__icon
       background-color: transparent
-      padding: 0
+      padding: 0 !important
 
     .button__icon
       svg
@@ -53,20 +61,24 @@
 
 .button__icon + .button__content
   text-align: left
+  padding-left: 1.1rem
 
 .button__content,
 .button__icon
   display: flex
   align-items: center
-  padding: 0.7rem 1rem
   line-height: 1
+
+.button__content
+  padding: 0.9rem 1.5rem
+
+.button__icon
+  padding: 0 0 0 1.1rem
 
 svg
   display: block
 
 .button__icon
-  background-color: rgba(0, 0, 0, 0.07)
-
   svg
     width: 1rem
     height: 1rem
@@ -74,6 +86,9 @@ svg
 .button--iconRight
   .button__icon
     order: 1
+    padding: 0 1.1rem 0 0
+  .button__icon + .button__content
+    padding: 0.9rem 1.1rem 0.9rem 1.5rem
 
 @media (max-width: 640px)
   .button__content,
