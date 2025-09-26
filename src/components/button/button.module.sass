@@ -31,6 +31,17 @@
       background-color: var(--bw-ui-button-secondary-bgHoverColor, hsl(0, 0%, 77%))
     &:active
       background-color: var(--bw-ui-button-secondary-bgColor, hsl(0, 0%, 84%))
+    &:focus
+      outline: 3px solid var(--bw-ui-button-secondary-focusOutlineColor, hsla(0, 0%, 84%, 0.3))
+
+  &--danger
+    background-color: var(--bw-ui-button-danger-bgColor, hsl(353, 83.5%, 49.8%))
+    &:hover
+      background-color: var(--bw-ui-button-danger-bgHoverColor, hsl(353, 83.5%, 42.7%))
+    &:active
+      background-color: var(--bw-ui-button-danger-bgColor, hsl(353, 83.5%, 49.8%))
+    &:focus
+      outline: 3px solid var(--bw-ui-button-danger-focusOutlineColor, hsla(353, 83.5%, 49.8%, 0.3))
 
   &--link
     background-color: transparent

@@ -8,7 +8,7 @@ export type ButtonProps = Readonly<{
   iconWidth?: number,
   iconHeight?: number,
   iconPosition?: 'right',
-  style?: 'link' | 'secondary',
+  style?: 'link' | 'secondary' | 'danger',
   autoFocus?: boolean,
   type?: 'button'
   fontSize?: string

@@ -42,6 +42,13 @@ export const Secondary: Story = {
   }
 };
 
+export const Danger: Story = {
+  args: {
+    children: 'Danger Button',
+    style: 'danger'
+  }
+};
+
 export const Link: Story = {
   args: {
     children: 'Link Button',
